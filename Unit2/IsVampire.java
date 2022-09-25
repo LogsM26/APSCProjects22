@@ -11,7 +11,7 @@ public class IsVampire{
       return false;
 
     //vampire time
-    }else if(hour < 6 && hour > 22 && awake == true || hour > 6 && hour < 22 && awake == false){
+    }else{
       return true;
     }
 
@@ -26,9 +26,9 @@ public class IsVampire{
     System.out.print("hour: " + hour + "awake: " + awake + "wanted: " + wanted + "result: " + result);
 
     if(result == wanted){
-      System.out.println("ok");
+      System.out.println("W");
     }else{
-      System.out.println("yay we failed");
+      System.out.println("L");
     }
   }
 
@@ -36,10 +36,10 @@ public class IsVampire{
 
   public static void main(String[] args){
 
-    testIsVampire(5, 23, true);
-    testIsVampire(7, 12, false);
-    testIsVampire(2, 3, true);
-    testIsVampire(13, 14, false);
+    testIsVampire(5, true, true);
+    testIsVampire(7, true, false);
+    testIsVampire(2, true, true);
+    testIsVampire(13, true, false);
   }
 
 }
