@@ -24,6 +24,8 @@ public class StartHi{
 
     boolean result = testStartHi(str, wanted);
 
+    System.out.print("str: " + str + "wanted: " + wanted + "result: " + result);
+
     if(wanted == result){
       return true;
     }else{
