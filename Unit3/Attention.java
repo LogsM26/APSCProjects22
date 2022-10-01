@@ -5,7 +5,7 @@ public class Attention{
 
   public static boolean attention(String h){
 
-    if(h.substring(0,7) == String("Hey you!")){
+    if(h.substring(0,8) == "Hey you!"){
       return true;
     }else{
       return false;
@@ -15,14 +15,14 @@ public class Attention{
 
   public static void testAttention(String h, boolean wanted){
 
-    boolean result = attention(h, wanted);
+    boolean result = attention(h);
 
-    System.out.print("h: " + h + "wanted: " + wanted + "result: " + result);
+    System.out.print("h: " + h + " wanted: " + wanted + " result: " + result);
 
     if(result == wanted){
-      System.out.println("W");
+      System.out.println(" W");
     }else{
-      System.out.println("L");
+      System.out.println(" L");
     }
   }
 
