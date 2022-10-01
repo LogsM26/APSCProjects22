@@ -5,7 +5,7 @@ public class Attention{
 
   public static boolean attention(String h){
 
-    if(h.substring(0,8) == "Hey you!"){
+    if(h.substring(0,8).equals("Hey you!")){
       return true;
     }else{
       return false;
@@ -31,6 +31,10 @@ public class Attention{
     testAttention("Hello, my name is Inigo Montoya", false);
     testAttention("Excuse me, Dr. Kessner?", false);
     testAttention("Hey you! Give me a hug!", true);
+    testAttention("Hey you!", true);
+
+    String h = "Hey you! Give me a hug!";
+    System.out.print(h.substring(0,8));
 
   }
 }
