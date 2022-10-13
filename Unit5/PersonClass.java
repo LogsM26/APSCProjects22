@@ -6,18 +6,20 @@ public class PersonClass{
 
   public PersonClass(String nameIn, String numPetsIn){
 
-    nameIn = "";
-    numPetsIn = "";
+    name = nameIn;
+    numPets = numPetsIn;
 
   }
 
 
 
-  public static String name(){
+  public String name(){
+
     return name;
   }
 
-  public static String numPets()
+  public String numPets(){
+
     return numPets;
   }
 
@@ -25,9 +27,9 @@ public class PersonClass{
 
 
 
-  public static String greeting(){
+  public String greeting(){
 
-    System.out.println("Hello, my name is" + name + "and I have" + numPets);
+    return "Hello, my name is " + name + " and I have " + numPets + " pets";
   }
 
 

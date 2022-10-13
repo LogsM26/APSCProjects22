@@ -5,19 +5,26 @@ public class TestRect{
   //area
   //perimeter
   //diagonal length
+  //Rect one, double b, double h, double wantedArea, double wantedPerim, double wantedLength
 
-  public static void testRect(Rect one, double b, double h, double wantedArea,
-                                double wantedPerim, double wantedLength){
 
-    double resultArea = one.areaRect(b, h);
-    double resultPerim = one.perimRect(b, h);
-    double resultLength = one.lengthRect(b, h);
+  public static void testRect(Rect one, double wantedArea, double wantedPerim, double wantedLength){
 
-    System.out.print(" b: " + b + " h: " + h + " wantedArea: " + wantedArea + " wantedPerim: " +
-                    wantedPerim + " wantedLength: " + wantedLength + " resultArea: " + resultArea +
-                    " resultPerim: " + resultPerim + " resultLength: " + resultLength);
 
-    if(resultArea == wantedArea && resultPerim == wantedPerim && resultLength == wantedLength){
+    double result1 = one.areaRect();
+    double result2 = one.perimRect();
+    double result3 = one.lengthRect();
+
+    //" b: " + b + " h: " + h + " wantedArea: " + wantedArea + " wantedPerim: " +
+    //wantedPerim + " wantedLength: " + wantedLength + " resultArea: " + resultArea +
+    //" resultPerim: " + resultPerim + " resultLength: " + resultLength
+
+    System.out.print(" area: " + result1 +
+                    " perim: " + result2 + " length: " + result3);
+
+
+
+    if((Math.abs(result1 - wantedArea) < 0.001) && (Math.abs(result2 - wantedPerim) < 0.001) && (Math.abs(result3 - wantedLength) < 0.001)){
       System.out.println(" W");
     }else{
       System.out.println(" L");
@@ -27,16 +34,21 @@ public class TestRect{
 
 
 
+
   public static void main(String[] args){
 
     Rect r1 = new Rect(5, 15);
     Rect r2 = new Rect(60, 373);
     Rect r3 = new Rect(2, 1);
-    Rect r4 = new Rect(8, 5);
 
-    testRect(r1, 75, 40, 26.024, true);
-    testRect(r2, 22380, 866, 3601.0000, true);
-    testRect(r3, 3393, 183, 383, false);
-    testRect(r4, 4, 8, 9, false);
+    //r1.areaRect();
+    //r2.perimRect();
+    //r3.lengthRect();
+
+
+    testRect(r1, 75, 40, 15.8113883008);
+    testRect(r2, 22380, 866, 377.79491);
+    testRect(r3, 2, 6, 2.2360);
+
   }
 }
