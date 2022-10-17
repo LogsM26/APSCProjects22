@@ -8,8 +8,6 @@ public class AnimatedCode extends PApplet{
 
 
 
-  private PApplet PApplet;
-
   private int x, y;
   private int vx, vy;
 
