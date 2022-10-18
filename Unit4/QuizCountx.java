@@ -19,6 +19,8 @@ public class QuizCountx{
       }
     }
 
+    System.out.println(result);
+
     return result;
   }
 

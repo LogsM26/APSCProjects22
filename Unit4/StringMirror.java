@@ -6,13 +6,15 @@ public class StringMirror{
 
   public static String mirror(String input){
 
+
     String result = "";
 
-    for(int i = input.length(); i <= 0; i--){
+
+    for(int i = input.length()-1; i >= 0; i--){
 
       String r = input.substring(i, i+1);
 
-      result = result + input + r;
+      result = result + r;
     }
 
     return result;
@@ -21,8 +23,8 @@ public class StringMirror{
 
   public static void main(String[] args){
 
-    mirror("Hello");
-    mirror("ara");
-    mirror("gfjdd");
+    System.out.println(mirror("Hello"));
+    System.out.println(mirror("ara"));
+    System.out.println(mirror("shb"));
   }
 }

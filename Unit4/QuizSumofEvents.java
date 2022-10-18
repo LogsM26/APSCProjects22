@@ -7,10 +7,12 @@ public class QuizSumofEvents{
 
     int result = 0;
 
-    for(int i = 0; i%2 == 0; i++){
+    for(int i = 0; i <=n; i++){
 
-      result = i + result;
+      result = i*2 + result;
     }
+
+    System.out.println(result);
 
     return result;
   }
@@ -19,5 +21,6 @@ public class QuizSumofEvents{
   public static void main(String[] args){
 
     sumOfEvents(10);
+    sumOfEvents(40);
   }
 }
