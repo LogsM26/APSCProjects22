@@ -8,7 +8,7 @@ public class ProcessingCode extends PApplet{
 
   public void settings(){
 
-    size(400, 400);
+    size(600, 600);
   }
 
 
