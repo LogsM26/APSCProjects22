@@ -38,11 +38,8 @@ public  class TestMagic8Ball{
 
   public static void main(String[] args){
 
-    Magic8Ball question1 = new Magic8Ball("Will my favoirite show be renewed?");
-    Magic8Ball question2 = new Magic8Ball("ihsbf");
-
-    question1.ask();
-    question1.ask();
-    question2.ask();
+    System.out.println(Magic8Ball.ask("Will my favorite show be renewed?"));
+    System.out.println(Magic8Ball.ask("shfsj"));
+    System.out.println(Magic8Ball.ask("Will I fail my next test?"));
   }
 }

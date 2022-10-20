@@ -4,19 +4,18 @@ public class Magic8Ball{
 
 
 
-  public Magic8Ball(String questionIn){
+  private String replies;
 
-    question = questionIn;
+
+
+  public Magic8Ball(String repliesIn){
+
+    replies = repliesIn;
   }
 
 
 
-  public String ask(){
-
-    String r1 = "The sun's premortal position indecates the Greek Gods are nonchalant.";
-    String r2 = "Your close friends and familt will provide you with all the signs you need";
-    String r3 = "No.";
-    String r4 = "Whatever you seek has already presented itself to you through the asteral projections.";
+  public String ask(String question){
 
 
     if(Math.random()*100 > 75){
@@ -36,5 +35,10 @@ public class Magic8Ball{
 
 
 
-  private final String question;
+  //private final String question;
+
+  private final String r1 = "The sun's premortal position indecates the Greek Gods are nonchalant.";
+  private final String r2 = "Your close friends and familt will provide you with all the signs you need";
+  private final String r3 = "No.";
+  private final String r4 = "Whatever you seek has already presented itself to you through the asteral projections.";
 }
