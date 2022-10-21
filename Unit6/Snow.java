@@ -9,7 +9,7 @@ import java.util.*;
 public class Snow extends PApplet{
 
 
-  private ArrayList<Snow> crystals;
+  private ArrayList<SnowClass> crystals;
 
 
 
@@ -23,7 +23,7 @@ public class Snow extends PApplet{
 
   public void setup(){
 
-    crystals = new ArrayList<Snow>();
+    crystals = new ArrayList<SnowClass>();
     sprinkleSnow();
   }
 
@@ -37,7 +37,7 @@ public class Snow extends PApplet{
     float radius = random(2, 10);
 
 
-    Snow sphere = new SnowClass(this, position, v, radius);
+    SnowClass sphere = new SnowClass(this, position, v, radius);
     crystals.add(sphere);
 
 
@@ -51,7 +51,7 @@ public class Snow extends PApplet{
 
     background(8, 125, 37);
 
-    for(Snow sphere: crystals){
+    for(SnowClass sphere: crystals){
       sphere.display();
     }
   }

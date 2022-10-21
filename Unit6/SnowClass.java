@@ -37,7 +37,7 @@ public class SnowClass{
 
     if(position.y < 600){
 
-      position.y(0);
+      position.y = 0;
     }
   }
 
