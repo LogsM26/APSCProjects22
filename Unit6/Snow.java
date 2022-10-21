@@ -16,7 +16,7 @@ public class Snow extends PApplet{
 
   public void settings(){
 
-    size(600, 600);
+    size(400, 400);
   }
 
 
@@ -32,27 +32,26 @@ public class Snow extends PApplet{
 
     PVector position = new PVector(random(0, width), 0);
     PVector v = PVector.random2D();
-    v.setMag(random(1, 3));
+    v.setMag(random(1, 2));
 
     float radius = random(2, 10);
-
 
     SnowClass sphere = new SnowClass(this, position, v, radius);
     crystals.add(sphere);
 
-
-    for(int i = 0; i < 150; i++){
-      sprinkleSnow();
-    }
   }
 
 
   public void draw(){
 
-    background(8, 125, 37);
+    background(3, 37, 126);
 
     for(SnowClass sphere: crystals){
       sphere.display();
+    }
+
+    for(int i = 0; i < 1; i++){
+      sprinkleSnow();
     }
   }
 

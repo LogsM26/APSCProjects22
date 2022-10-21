@@ -33,12 +33,6 @@ public class SnowClass{
     p.ellipse(position.x, position.y, radius*2, radius*2);
 
     position.add(v);
-
-
-    if(position.y < 600){
-
-      position.y = 0;
-    }
   }
 
 }
