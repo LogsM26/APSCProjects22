@@ -1,6 +1,6 @@
 
 
-public  class TestMagic8Ball{
+public class TestMagic8Ball{
 
 
   //make object from class
@@ -38,8 +38,16 @@ public  class TestMagic8Ball{
 
   public static void main(String[] args){
 
+    System.out.println("Will my favorite show be renewed?");
     System.out.println(Magic8Ball.ask("Will my favorite show be renewed?"));
+
+    System.out.println("shfsj");
     System.out.println(Magic8Ball.ask("shfsj"));
+
+    System.out.println("Will I fail my next test?");
     System.out.println(Magic8Ball.ask("Will I fail my next test?"));
+
+    System.out.println("Will I be diagnosied with autisim?");
+    System.out.println(Magic8Ball.ask("Will I be diagnosied with autisim"));
   }
 }
