@@ -14,7 +14,7 @@ public class CountLucky{
 
     for(int value : values){
 
-      if(value%7 == 0){
+      if((value%7 == 0) || (value%10 == 7)){
         count++;
       }
     }
@@ -66,6 +66,6 @@ public class CountLucky{
 
 
     testCount7(values, 3);
-    testCount7(values1, 0);
+    testCount7(values1, 1);
   }
 }
