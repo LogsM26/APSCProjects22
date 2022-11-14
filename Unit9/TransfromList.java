@@ -9,21 +9,23 @@ public class TransfromList{
 
   public static ArrayList<String> reverseAll(ArrayList<String> words){
 
-    ArrayList<String> result = new ArrayList<String>();
+    ArrayList<String> results = new ArrayList<String>();
 
-    for(String result : results){
+    for(String w : words){
 
+      String temp = "";
 
+      for(int i = w.length()-1; i >= 0; i --){
+
+        String t = w.substring(i, i+1);
+
+        temp += t;
+      }
+
+      results.add(temp);
     }
 
-    for(String i = word.length()-1; i >= 0; i--){
-
-      String r = word.substring(i, i+1);
-
-      result = result + r;
-    }
-
-    return result;
+    return results;
   }
 
 
