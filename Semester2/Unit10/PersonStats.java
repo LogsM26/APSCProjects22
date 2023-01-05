@@ -7,20 +7,24 @@ public class PersonStats{
 
 
   //Test It!
-  public static void testPersonStats(ArrayList<Person> people, int expected){
+  public static void testPersonStats(ArrayList<Person> people, /*int expected*/ String expected2){
 
-    int result = averageNumP(people);
+    //int result = averageNumP(people);
+    String result = mostPets(people);
+
 
     System.out.print(people);
 
     for(Person p : people){
-      System.out.println(people + " ");
+      System.out.println(p.getName() + " " + p.getNumP() + ", ");
     }
 
 
-    System.out.println("expected: " + expected + " result: " + result);
+    //System.out.println("expected: " + expected + " result: " + result);
+    System.out.println("expected: " + expected2 + " result: " + result);
 
-    if(expected == result){
+    //Add or remove 2 from expected
+    if(expected2 == result){
       System.out.println("W");
     }else{
       System.out.println("L");
@@ -51,9 +55,9 @@ public class PersonStats{
     for(Person p : people){
       if(p.getNumP() > amount){
         amount = p.getNumP();
+        mostPetPerson = p.getName();
       }
 
-      mostPetPerson = p.getName();
     }
 
     return mostPetPerson;
@@ -63,15 +67,19 @@ public class PersonStats{
   //People With At Least 2 Pets
   public static ArrayList<String> least2(ArrayList<Person> people){
 
-    ArrayList<String> least = new ArrayList<String>();
+    ArrayList<String> leasts = new ArrayList<String>();
 
     for(Person p : people){
       if(p.getNumP() > 2){
-        least.add(p.getName());
+        leasts.add(p.getName());
       }
     }
 
-    return least;
+    for(String least : leasts){
+      System.out.println(least);
+    }
+
+    return leasts;
   }
 
 
@@ -85,6 +93,10 @@ public class PersonStats{
     people.add(new Person("Nora", 1));
     people.add(new Person("Jules", 1));
 
-    testPersonStats(people, 9/2);
+    //Test It! Pt.2
+    //testPersonStats(people, 9/2);
+    testPersonStats(people, "Kate");
+    //testPersonStats(people, "Grey", "Kate");
+
   }
 }

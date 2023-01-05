@@ -7,10 +7,9 @@ public class ItemCalculator{
 
 
   //Test It!
-  public static void testItemCalculator(ArrayList<Item> items, /*float expected,*/ String expected2){
+  public static void testItemCalculator(ArrayList<Item> items, float expected /*String expected2*/){
 
-    String result = printNamePrice(items);
-    //float result = averagePrice(items);
+    float result = averagePrice(items);
     //String result = mostExpensive(items);
 
 
@@ -18,22 +17,16 @@ public class ItemCalculator{
 
 
     for(Item item : items){
-      System.out.print(people + " ");
+      System.out.print(item.getName() + " " + item.getPrice() + ", ");
     }
 
 
-    //System.out.println("expected: " + expected + " result: " + result);
-    System.out.println("expected: " + expected2 + " result: " + result);
+    System.out.println("expected: " + expected + " result: " + result);
+    //System.out.println("expected: " + expected2 + " result: " + result);
 
-    /*
+
+    //Add or remove 2 from expected
     if(expected == result){
-      System.out.println("W");
-    }else{
-      System.out.println("L");
-    }
-    */
-
-    if(expected2 == result){
       System.out.println("W");
     }else{
       System.out.println("L");
@@ -44,7 +37,7 @@ public class ItemCalculator{
 
 
   //Prints Name and Price, FOR EACH LOOP
-  public static String printNamePrice(ArrayList<Item> items){
+  public static void printNamePrice(ArrayList<Item> items){
 
     String namePrice = " ";
 
@@ -52,7 +45,7 @@ public class ItemCalculator{
       System.out.println("This grocery is " + i.getName() + " and it costs " + i.getPrice());
     }
 
-    return namePrice;
+    //return namePrice;
   }
 
 
@@ -79,11 +72,12 @@ public class ItemCalculator{
 
       if(i.getPrice() > thing){
         thing = i.getPrice();
+        expensive = i.getName();
       }
 
-      expensive = i.getName();
     }
 
+    System.out.println(expensive);
     return expensive;
   }
 
@@ -102,8 +96,7 @@ public class ItemCalculator{
 
 
     //Test It! Pt.2
-    testItemCalculator(items, "This grocery is Milk and it costs 5.0");
-    //testItemCalculator(items, 436.2f);
+    testItemCalculator(items, 436.2f);
     //testItemCalculator(items, "Pinot Noir");
   }
 }
