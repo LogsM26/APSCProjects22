@@ -6,20 +6,20 @@ import java.util.*;
 public class AnimalCalculator{
 
 
-  public void everything(ArrayList<Animal> animals){
+  public static void everything(ArrayList<Animal> animals){
 
     for(Animal a : animals){
 
       if(a.getFurriness() == true){
-        System.out.println(a.getName() + " " + a.getLegCount() + " furry");
+        System.out.println("This animal is a " + a.getName() + " and it has " + a.getLegCount() + " legs. It is " + " furry");
       }else{
-        System.out.println(a.getName() + " " + a.getLegCount() + " not furry");
+        System.out.println("This animal is a " + a.getName() + " and it has " + a.getLegCount() + " legs. It is " + "not furry");
       }
     }
   }
 
 
-  public int avLegCount(ArrayList<Animal> animals){
+  public static int avLegCount(ArrayList<Animal> animals){
 
     int avLegCount = 0;
 
@@ -27,34 +27,33 @@ public class AnimalCalculator{
       avLegCount += a.getLegCount();
     }
 
-    System.out.println(avLegCount);
     return avLegCount / animals.size();
   }
 
 
-  public String leastLegCount(ArrayList<Animal> animals){
+  public static String leastLegCount(ArrayList<Animal> animals){
 
     String leastLegCount = " ";
     int leastLegs = 0;
 
     for(Animal a : animals){
 
-      if(a.getLegCount() > leastLegs){
+      if(a.getLegCount() <= leastLegs){
         leastLegs += a.getLegCount();
         leastLegCount = a.getName();
       }
     }
 
-    System.out.println(leastLegCount);
     return leastLegCount;
   }
 
 
 
-
+  /*
   public void testFunctions(ArrayList<Animal> animals, String expected, int expected2, boolean expected3){
 
   }
+  */
 
 
 
@@ -74,6 +73,8 @@ public class AnimalCalculator{
     Spider s = new Spider("Spider", 8, false);
     animals.add(s);
 
-    System.out.println(animals.size());
+    everything(animals);
+    System.out.println("Average Leg Count: " + avLegCount(animals));
+    System.out.println("Least Leg Count: " + leastLegCount(animals));
   }
 }
