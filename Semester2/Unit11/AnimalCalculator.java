@@ -19,9 +19,9 @@ public class AnimalCalculator{
   }
 
 
-  public static int avLegCount(ArrayList<Animal> animals){
+  public static double avLegCount(ArrayList<Animal> animals){
 
-    int avLegCount = 0;
+    double avLegCount = 0;
 
     for(Animal a : animals){
       avLegCount += a.getLegCount();
@@ -34,7 +34,7 @@ public class AnimalCalculator{
   public static String leastLegCount(ArrayList<Animal> animals){
 
     String leastLegCount = " ";
-    int leastLegs = 0;
+    double leastLegs = 0;
 
     for(Animal a : animals){
 
@@ -49,11 +49,29 @@ public class AnimalCalculator{
 
 
 
-  /*
-  public void testFunctions(ArrayList<Animal> animals, String expected, int expected2, boolean expected3){
 
+  public static void testFunctions(ArrayList<Animal> animals, double expected1, String expected2){
+
+    double result1 = avLegCount(animals);
+    String result2 = leastLegCount(animals);
+
+    System.out.println("Animals: ");
+
+    for(Animal a : animals){
+      System.out.println(a.getName() + " ");
+    }
+
+
+    System.out.println("expected1: " + expected1 + " result1: " + result1);
+    System.out.println("expected2: " + expected2 + " result2: " + result2);
+
+    if( (expected1 == result1) && (expected2 == result2) ){
+      System.out.println("W");
+    }else{
+      System.out.println("L");
+    }
   }
-  */
+
 
 
 
@@ -76,5 +94,7 @@ public class AnimalCalculator{
     everything(animals);
     System.out.println("Average Leg Count: " + avLegCount(animals));
     System.out.println("Least Leg Count: " + leastLegCount(animals));
+
+    testFunctions(animals, 3.5, "Fish");
   }
 }
