@@ -33,6 +33,14 @@
     current++; to change scenes w/keypressed or something
     each is a class that implements Interface
     construcuor has the this.p = p;
+
+  each level(s) for each planet
+    three constalations
+      list horizontally of star fragments
+      each is a level for one constalation
+      next one is locked
+        image or color
+        if statement somewhere
 */
 
 
@@ -43,27 +51,31 @@ public class MasterFile extends PApplet{
 
 
   //Variables
-
     //Integers
 
     //Floats
 
     //Strings
-    String gameState = "TITLE";
+    String gameState = "PLANETSELECT";
 
 
+  //Fun Stuff/Aesthetics
     //Images
       //Title
       PImage bridge;
 
-      //Select
+      //Planet Select
       PImage p1;
       PImage p2;
       PImage p3;
 
+      //Level Select
+      PImage star;
+
     //Fonts
       //Main
       PFont liquid;
+
 
 
 
@@ -89,11 +101,13 @@ public class MasterFile extends PApplet{
     }else if(gameState == "MANUEL"){
       //drawManuel();
 
-    }else if(gameState == "SELECT"){
-      drawSelect();
+    }else if(gameState == "PLANETSELECT"){
+      drawPlanetSelect();
 
     }else if(gameState == "P1"){
-      //drawSelectP1();
+      drawSelectP1();
+    }else if(gameState == "P1LEVELS"){
+      //drawP1Levels();
     }else if(gameState == "P1G1"){
       //drawSelectP1G1();
     }
@@ -102,7 +116,7 @@ public class MasterFile extends PApplet{
 
 
 
-  //Custom Functions
+  //Beginning Custom Functions
   public void drawTitle(){
 
     //Images
@@ -167,6 +181,20 @@ public class MasterFile extends PApplet{
 
 
 
+
+  //Planet Levels
+  public void drawSelectP1(){
+
+    //Images
+      //Constalations
+
+      //Stars
+  }
+
+
+
+
+  //Interaction
   public void mouseClicked(){
 
     //During TITLE
@@ -175,37 +203,32 @@ public class MasterFile extends PApplet{
       if( (mouseX < width/20+20) && (mouseX > width/20)
             && (mouseY < height-80) && (mouseY > height-100) ){
 
-              gameState = "SELECT";
-
-              System.out.println("SELECT");
-
-
+              gameState = "PLANETSELECT";
+              System.out.println("PLANETSELECT");
             }
 
 
     //During SELECT
-    }else if(gameState.equals("SELECT")){
+  }else if(gameState.equals("PLANETSELECT")){
 
-      if( (mouseX < width/20-25) && (mouseX > width/20+5)
-            && (mouseY < height-35) && (mouseY > height+5) ){
+      if( (mouseX < width/20-25+30) && (mouseX > width/20-25)
+            && (mouseY < height-25+30) && (mouseY > height-25) ){
 
               gameState = "TITLE";
-
               System.out.println("TITLE");
 
 
-              //P1
-            }else if(){
+            //P1
+            }else if( (mouseX < width/2+25+600) && (mouseX > width/2+25)
+                      && (mouseY < height/2-125+600) && (mouseY > height/2-125) ){
 
               gameState = "P1";
-
               System.out.println("P1");
             }
 
-    }
 
     //During P1
-
+    }
   }
 
 
