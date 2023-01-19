@@ -4,6 +4,35 @@
   character should have a POSITION and a VELOCITY
     PVectors
     the longer you hold faster you get or something
+
+
+    translation, rotate, scale
+      translate moves the origin to the middle of the screen
+        width/2, height/2
+      for rotate you can draw an object at the origin
+        will rotate in place
+
+      push pop
+
+  Controlls the scenes
+    Interface
+
+  scene Interface
+    display and keypressed
+
+  change between classes for each scene
+     make an arraylist of scnees
+     add into setup in MasterFile
+     draw is get(current).display();
+     scenes.get(current).handleKeyPressed();
+        current is a Private Integer
+
+  print an integer to say what scene you're on
+
+  induvival scene
+    current++; to change scenes w/keypressed or something
+    each is a class that implements Interface
+    construcuor has the this.p = p;
 */
 
 
@@ -14,14 +43,13 @@ public class MasterFile extends PApplet{
 
 
   //Variables
-  public PApplet p;
 
     //Integers
 
     //Floats
 
     //Strings
-    String gameState = "SELECT";
+    String gameState = "TITLE";
 
 
     //Images
@@ -29,7 +57,6 @@ public class MasterFile extends PApplet{
       PImage bridge;
 
       //Select
-      PImage beach;
       PImage p1;
       PImage p2;
       PImage p3;
@@ -37,8 +64,6 @@ public class MasterFile extends PApplet{
     //Fonts
       //Main
       PFont liquid;
-      int fontSize = 0;
-
 
 
 
@@ -118,10 +143,6 @@ public class MasterFile extends PApplet{
     background(5, 21, 33);
 
     //Images
-    beach = loadImage("Beach.png");
-    beach.resize(width, height);
-    //background(beach);
-    //image(beach, 0, 0);
 
       //Planets
       p1 = loadImage("P1Earth.png");
@@ -149,49 +170,43 @@ public class MasterFile extends PApplet{
   public void mouseClicked(){
 
     //During TITLE
-    if(gameState == "TITLE"){
+    if(gameState.equals("TITLE")){
 
-      if( (p.mouseX < width/20+15) && (p.mouseX > width/20)
-            && (p.mouseY < height-80) && (p.mouseY > height-100) ){
+      if( (mouseX < width/20+20) && (mouseX > width/20)
+            && (mouseY < height-80) && (mouseY > height-100) ){
 
               gameState = "SELECT";
 
-              System.out.println("fygvjhb");
+              System.out.println("SELECT");
+
+
             }
 
 
     //During SELECT
-    }else if(gameState == "SELECT"){
+    }else if(gameState.equals("SELECT")){
 
-      if( (p.mouseX < width/20-25) && (p.mouseX > width/20+5)
-            && (p.mouseY < height-35) && (p.mouseY > height+5) ){
+      if( (mouseX < width/20-25) && (mouseX > width/20+5)
+            && (mouseY < height-35) && (mouseY > height+5) ){
 
               gameState = "TITLE";
 
-              System.out.println("s");
-            }
-    }
+              System.out.println("TITLE");
 
+
+              //P1
+            }else if(){
+
+              gameState = "P1";
+
+              System.out.println("P1");
+            }
+
+    }
 
     //During P1
 
   }
-
-
-    /*
-    //Buttons
-    textSize(20);
-    fill(209, 73, 19);
-    text("Visit the Stars", width/20, height-100);
-
-    textSize(20);
-    fill(209, 73, 19);
-    text("Manual", width/20, height-75);
-
-    textSize(20);
-    fill(209, 73, 19);
-    text("Credits", width/20, height-50);
-    */
 
 
 
