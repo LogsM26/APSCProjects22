@@ -51,23 +51,25 @@ public class MasterFile extends PApplet{
 
 
   //Variables
+    //ArrayLists
+    ArrayList<SceneInterface> scenes;
+
     //Integers
+    private int current = 1;
 
     //Floats
 
     //Strings
-    String gameState = "PLANETSELECT";
+    //String gameState = "PLANETSELECT";
 
 
   //Fun Stuff/Aesthetics
     //Images
-      //Title
-      PImage bridge;
+    PImage bridge;
 
-      //Planet Select
-      PImage p1;
-      PImage p2;
-      PImage p3;
+    PImage p1;
+    PImage p2;
+    PImage p3;
 
       //Level Select
       PImage star;
@@ -82,114 +84,45 @@ public class MasterFile extends PApplet{
   //Setup Funtions
   public void settings(){
 
-    size(1000, 600);
+    //size(1000, 600);
+    fullScreen();
   }
 
 
   public void setup(){
 
-    //background(100,4,37);
-    liquid = createFont("DkLiquidEmbrace-YBvv.ttf", 75);
+    //ArrayList
+    scenes = new ArrayList<SceneInterface>();
+
+      //Add To the AL
+        //Beginning
+        scenes.add(new TitleScene1(this, bridge, liquid));
+        //scenes.add(new Manuel2(this));
+
+        //Select
+        scenes.add(new PlanetSelect3(this, p1, p2, p3, liquid));
+
+        //Level Select
+        //scenes.add(new P1SelectLevel4(this));
+
+        //Gameplay
+        //scenes.add(new P1Game16(this));
+
+
+
+    //Fun Stuff
+
+      //Fonts
+      liquid = createFont("DkLiquidEmbrace-YBvv.ttf", 75);
+
   }
 
 
   public void draw(){
 
-    //gameState If Statement
-    if(gameState == "TITLE"){
-      drawTitle();
-    }else if(gameState == "MANUEL"){
-      //drawManuel();
-
-    }else if(gameState == "PLANETSELECT"){
-      drawPlanetSelect();
-
-    }else if(gameState == "P1"){
-      drawSelectP1();
-    }else if(gameState == "P1LEVELS"){
-      //drawP1Levels();
-    }else if(gameState == "P1G1"){
-      //drawSelectP1G1();
-    }
+    scenes.get(current).display();
   }
 
-
-
-
-  //Beginning Custom Functions
-  public void drawTitle(){
-
-    //Images
-    bridge = loadImage("Bridge.jpg");
-    bridge.resize(width, height);
-    background(bridge);
-    //image(bridge, 0, 0);
-
-
-    //Main text
-    textSize(75);
-    fill(235, 198, 99);
-    textFont(liquid);
-    text("Hunt for Stars", width/20, height/6+75);
-
-
-    //Buttons
-    textSize(20);
-    fill(209, 73, 19);
-    text("Visit the Stars", width/20, height-100);
-
-    textSize(20);
-    fill(209, 73, 19);
-    text("Manual", width/20, height-75);
-
-    textSize(20);
-    fill(209, 73, 19);
-    text("Credits", width/20, height-50);
-
-
-    //Collison Detection
-    //makes it glow
-  }
-
-
-  public void drawSelect(){
-
-    background(5, 21, 33);
-
-    //Images
-
-      //Planets
-      p1 = loadImage("P1Earth.png");
-      p1.resize(600, 600);
-      image(p1, width/2+25, height/2-125);
-
-      p2 = loadImage("P2Mars.png");
-      p2.resize(300, 300);
-      image(p2, width/10, height/4);
-
-      p3 = loadImage("P3Alge.png");
-      p3.resize(200, 200);
-      image(p3, width/2, height/20);
-
-
-    //Text
-    textFont(liquid);
-    textSize(30);
-    fill(103, 209, 214);
-    text("Return",  width/20-25, height-25);
-  }
-
-
-
-
-  //Planet Levels
-  public void drawSelectP1(){
-
-    //Images
-      //Constalations
-
-      //Stars
-  }
 
 
 
@@ -198,38 +131,52 @@ public class MasterFile extends PApplet{
   public void mouseClicked(){
 
     //During TITLE
-    if(gameState.equals("TITLE")){
+    if(current == 1){
 
       if( (mouseX < width/20+20) && (mouseX > width/20)
             && (mouseY < height-80) && (mouseY > height-100) ){
 
-              gameState = "PLANETSELECT";
+              //Into plant select
+              current = 3;
               System.out.println("PLANETSELECT");
             }
 
 
-    //During SELECT
-  }else if(gameState.equals("PLANETSELECT")){
+    //During planet SELECT
+    }else if(current == 3){
 
+      //BACK TO TITLE
       if( (mouseX < width/20-25+30) && (mouseX > width/20-25)
             && (mouseY < height-25+30) && (mouseY > height-25) ){
 
-              gameState = "TITLE";
+              current = 1;
               System.out.println("TITLE");
 
 
-            //P1
+            //INTO planet 1
             }else if( (mouseX < width/2+25+600) && (mouseX > width/2+25)
                       && (mouseY < height/2-125+600) && (mouseY > height/2-125) ){
 
-              gameState = "P1";
-              System.out.println("P1");
+              current = 4;
+              System.out.println("On Plant1");
             }
 
 
     //During P1
+    /*
+    }else if(current == 4){
+
+      //Into games
+      if( ()){
+
+        current = 5;
+        System.out.println("Into game 1");
+      }
+      */
+
     }
   }
+
 
 
 
