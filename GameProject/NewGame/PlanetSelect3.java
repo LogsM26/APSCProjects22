@@ -8,8 +8,8 @@ public class PlanetSelect3 implements SceneInterface{
   //Variables
   private PApplet p;
 
-  //Fun Stuff/Aesthetics
 
+  //Fun Stuff/Aesthetics
     //Images
     PImage p1;
     PImage p2;
@@ -40,6 +40,9 @@ public class PlanetSelect3 implements SceneInterface{
 
   public void drawPlanetSelect(){
 
+    liquid = p.createFont("DkLiquidEmbrace-YBvv.ttf", 75);
+
+
     p.background(5, 21, 33);
 
     //Images
@@ -48,24 +51,25 @@ public class PlanetSelect3 implements SceneInterface{
       p1 = p.loadImage("P1Earth.png");
       p1.resize(600, 600);
       p.image(p1, p.width/2+25, p.height/2-125);
+      //525, 175
 
       p2 = p.loadImage("P2Mars.png");
       p2.resize(300, 300);
       p.image(p2, p.width/10, p.height/4);
+      //100, 150
 
       p3 = p.loadImage("P3Alge.png");
       p3.resize(200, 200);
       p.image(p3, p.width/2, p.height/20);
+      //500, 30
 
 
     //Text
     p.textFont(liquid);
     p.textSize(30);
     p.fill(103, 209, 214);
-    p.text("Return",  p.width/20-25, p.height-25);
-
-
-    liquid = p.createFont("DkLiquidEmbrace-YBvv.ttf", 75);
+    p.text("Return",  p.width/20-40, p.height-25);
+    //25, 575
   }
 
 

@@ -55,21 +55,22 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 1;
+    private int current = 0;
 
     //Floats
 
     //Strings
-    //String gameState = "PLANETSELECT";
 
 
   //Fun Stuff/Aesthetics
     //Images
-    PImage bridge;
+      //Title
+      PImage bridge;
 
-    PImage p1;
-    PImage p2;
-    PImage p3;
+      //Planet Select
+      PImage p1;
+      PImage p2;
+      PImage p3;
 
       //Level Select
       PImage star;
@@ -85,7 +86,9 @@ public class MasterFile extends PApplet{
   public void settings(){
 
     //size(1000, 600);
+    //1400, 800
     fullScreen();
+
   }
 
 
@@ -97,16 +100,16 @@ public class MasterFile extends PApplet{
       //Add To the AL
         //Beginning
         scenes.add(new TitleScene1(this, bridge, liquid));
-        //scenes.add(new Manuel2(this));
+        scenes.add(new Manuel2(this, liquid));
 
         //Select
         scenes.add(new PlanetSelect3(this, p1, p2, p3, liquid));
 
         //Level Select
-        //scenes.add(new P1SelectLevel4(this));
+        scenes.add(new Plant1SelectLevel4(this, star, liquid));
 
         //Gameplay
-        //scenes.add(new P1Game16(this));
+        //scenes.add(new Plant1Game1(this, liquid));
 
 
 
@@ -121,6 +124,7 @@ public class MasterFile extends PApplet{
   public void draw(){
 
     scenes.get(current).display();
+
   }
 
 
@@ -130,51 +134,60 @@ public class MasterFile extends PApplet{
   //Interaction
   public void mouseClicked(){
 
-    //During TITLE
-    if(current == 1){
+  /*
+  label class, bounding boxes
+  check if inside, boolean true or false
+  */
 
-      if( (mouseX < width/20+20) && (mouseX > width/20)
-            && (mouseY < height-80) && (mouseY > height-100) ){
+  //Is Inside w/Label Class Boolean Function(s)
+
+
+
+
+    //During TITLE
+    if(current == 0){
+
+      System.out.print(mouseX + ":" + mouseY + "      ");
+
+      if( (mouseX < 289) && (mouseX > 77)
+            && (mouseY > 748) && (mouseY < 769) ){
+              //70, 50
+              //520, 500
 
               //Into plant select
-              current = 3;
+              current = 2;
               System.out.println("PLANETSELECT");
             }
 
 
     //During planet SELECT
-    }else if(current == 3){
+  }else if(current == 2){
+
+      System.out.print(mouseX + ":" + mouseY + "      ");
 
       //BACK TO TITLE
-      if( (mouseX < width/20-25+30) && (mouseX > width/20-25)
-            && (mouseY < height-25+30) && (mouseY > height-25) ){
+      if( (mouseX < 126) && (mouseX > 32)
+            && (mouseY < 875) && (mouseY > 849) ){
+              //55, 25
+              //605, 575
 
-              current = 1;
+              current = 0;
               System.out.println("TITLE");
 
 
             //INTO planet 1
-            }else if( (mouseX < width/2+25+600) && (mouseX > width/2+25)
-                      && (mouseY < height/2-125+600) && (mouseY > height/2-125) ){
+          }else if( (mouseX < 1269) && (mouseX > 820)
+                      && (mouseY < 854) && (mouseY > 377) ){
+                        //1125, 525
+                        //775, 175
 
-              current = 4;
+              current++;
               System.out.println("On Plant1");
             }
 
-
-    //During P1
-    /*
-    }else if(current == 4){
-
-      //Into games
-      if( ()){
-
-        current = 5;
-        System.out.println("Into game 1");
-      }
-      */
-
     }
+
+    scenes.get(current).handleKeyPressed();
   }
 
 
