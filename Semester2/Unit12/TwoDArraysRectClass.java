@@ -11,6 +11,9 @@ public class TwoDArraysRectClass{
   private double width;
   private double height;
 
+  private double p;
+  private double a;
+
   public TwoDArraysRectClass(String name, double width, double height){
 
     this.name = name;
@@ -31,7 +34,7 @@ public class TwoDArraysRectClass{
 
     //double p = 0;
 
-    double p = (2*width)+(2*height);
+    p = (2*width)+(2*height);
 
     return p;
   }
@@ -40,7 +43,7 @@ public class TwoDArraysRectClass{
 
     //double a = 0;
 
-    double a = width*height;
+    a = width*height;
 
     return a;
   }

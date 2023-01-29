@@ -32,7 +32,7 @@ public class TwoDArraysRectClassStats{
 
       for(TwoDArraysRectClass object : row){
 
-        if(object.area() > grA){
+        if(object.area() >= grA){
           grA = object.area();
         }
 
@@ -48,7 +48,11 @@ public class TwoDArraysRectClassStats{
     TwoDArraysRectClass[][] objects = new TwoDArraysRectClass[2][2];
     objects[0][0] = new TwoDArraysRectClass("Rect1", 5, 8);
     objects[0][1] = new TwoDArraysRectClass("Rect2", 67, 2);
+    objects[1][0] = new TwoDArraysRectClass("Rect3", 17, 2);
+    objects[1][1] = new TwoDArraysRectClass("Rect4", 690, 467);
+
 
     System.out.println(greatestA(objects));
+    System.out.println(averageP(objects));
   }
 }
