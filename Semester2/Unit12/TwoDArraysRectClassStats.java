@@ -10,16 +10,18 @@ public class TwoDArraysRectClassStats{
 
     //start at first index if COMPARING
     double avP = objects[0][0].perim();
+    int count = 0;
 
     for(TwoDArraysRectClass[] row : objects){
 
       for(TwoDArraysRectClass object : row){
 
         avP += object.perim();
+        count++;
       }
     }
 
-    return avP / objects.length;
+    return avP / count;
   }
 
 
