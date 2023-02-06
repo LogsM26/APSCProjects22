@@ -41,6 +41,11 @@
       next one is locked
         image or color
         if statement somewhere
+
+
+  ArrayList of blocks
+    grid, 0s and 1s, empty or not
+    show where the map pieces can go or something
 */
 
 
@@ -55,7 +60,8 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 0;
+    private int current = 3;
+    private int scenceIndex = 0;
 
     //Floats
 
@@ -130,6 +136,12 @@ public class MasterFile extends PApplet{
 
 
 
+  public void changeScene(int sceneIndex){
+
+    current = sceneIndex;
+  }
+
+
 
   //Interaction
   public void mouseClicked(){
@@ -139,15 +151,15 @@ public class MasterFile extends PApplet{
   check if inside, boolean true or false
   */
 
-  //Is Inside w/Label Class Boolean Function(s)
-
-
-
+  /*
+  if(label.isInside(mouseX, mouseY)){
+    current = 2;
+  }
 
     //During TITLE
     if(current == 0){
 
-      System.out.print(mouseX + ":" + mouseY + "      ");
+      //System.out.print(mouseX + ":" + mouseY + "      ");
 
       if( (mouseX < 289) && (mouseX > 77)
             && (mouseY > 748) && (mouseY < 769) ){
@@ -163,7 +175,7 @@ public class MasterFile extends PApplet{
     //During planet SELECT
   }else if(current == 2){
 
-      System.out.print(mouseX + ":" + mouseY + "      ");
+      //System.out.print(mouseX + ":" + mouseY + "      ");
 
       //BACK TO TITLE
       if( (mouseX < 126) && (mouseX > 32)
@@ -186,6 +198,7 @@ public class MasterFile extends PApplet{
             }
 
     }
+    */
 
     scenes.get(current).handleKeyPressed();
   }

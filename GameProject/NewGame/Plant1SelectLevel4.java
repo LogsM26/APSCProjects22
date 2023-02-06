@@ -2,11 +2,15 @@
 
 import java.util.*;
 import processing.core.*;
+import java.lang.Math.*;
 
 public class Plant1SelectLevel4 implements SceneInterface{
 
   //Variables
-  private PApplet p;
+  private MasterFile p;
+
+    //ArrayLists
+    ArrayList<Label> labels;
 
 
   //Fun Stuff/Aesthetics
@@ -18,7 +22,7 @@ public class Plant1SelectLevel4 implements SceneInterface{
 
 
 
-  public Plant1SelectLevel4(PApplet p, PImage star, PFont liquid){
+  public Plant1SelectLevel4(MasterFile p, PImage star, PFont liquid){
 
     //Variables
     this.p = p;
@@ -29,6 +33,11 @@ public class Plant1SelectLevel4 implements SceneInterface{
     //Fonts
     this.liquid = liquid;
 
+    labels = new ArrayList<Label>();
+    labels.add(new Label(p, 30, 830, 100, 40, "Return"));
+    labels.add(new Label(p, p.width/8+100, p.height/2+100, 100, 40, "Level 1"));
+    labels.add(new Label(p, p.width/3+80+100, p.height/2+100, 100, 40, "Level 2"));
+    labels.add(new Label(p, p.width/2+p.width/8+p.width/32+100, p.height/2+100, 100, 40, "Level 3"));
 
   }
 
@@ -43,11 +52,18 @@ public class Plant1SelectLevel4 implements SceneInterface{
 
     p.background(0, 0, 0);
 
+
     //Images
+    star = p.loadImage("starFragment.png");
+    star.resize(300, 300);
+    p.image(star, p.width/8, p.height/4);
+    p.image(star, p.width/3+80, p.height/4);
+    p.image(star, p.width/2+p.width/8+p.width/32, p.height/4);
 
-
-
-    //Main text
+    //Text
+    p.textFont(liquid);
+    p.textSize(30);
+    p.fill(209, 73, 19);
 
 
 
@@ -63,10 +79,21 @@ public class Plant1SelectLevel4 implements SceneInterface{
 
     //Calling Custom Functions
     drawPlant1Levels();
+
+    for(Label label : labels){
+      label.display();
+    }
+
   }
 
 
   public void handleKeyPressed(){
+
+
+    if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
+      p.changeScene(labels.get(0).getTargetScene(2));
+    }
+
 
   }
 }

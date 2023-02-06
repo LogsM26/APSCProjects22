@@ -6,7 +6,10 @@ import processing.core.*;
 public class PlanetSelect3 implements SceneInterface{
 
   //Variables
-  private PApplet p;
+  private MasterFile p;
+
+    //ArrayLists
+    private ArrayList<Label> labels;
 
 
   //Fun Stuff/Aesthetics
@@ -20,7 +23,7 @@ public class PlanetSelect3 implements SceneInterface{
 
 
 
-  public PlanetSelect3(PApplet p, PImage p1, PImage p2, PImage p3, PFont liquid){
+  public PlanetSelect3(MasterFile p, PImage p1, PImage p2, PImage p3, PFont liquid){
 
     //Variables
     this.p = p;
@@ -34,6 +37,10 @@ public class PlanetSelect3 implements SceneInterface{
     this.liquid = liquid;
 
 
+    labels = new ArrayList<Label>();
+    labels.add(new Label(p, 30, 830, 100, 40, "Return"));
+    //      p.image(p1, p.width/2+25, p.height/2-125);
+    labels.add(new Label(p, p.width/2+125, 400, 375, 375, ""));
   }
 
 
@@ -68,8 +75,18 @@ public class PlanetSelect3 implements SceneInterface{
     p.textFont(liquid);
     p.textSize(30);
     p.fill(103, 209, 214);
+
+      //Planet 1
+      p.text("Levels", p.width/2+260, p.height/2-100);
+      //Planet 2
+      //Planet 3
+
+    /*p.textFont(liquid);
+    p.textSize(30);
+    p.fill(103, 209, 214);
     p.text("Return",  p.width/20-40, p.height-25);
     //25, 575
+    */
   }
 
 
@@ -80,10 +97,22 @@ public class PlanetSelect3 implements SceneInterface{
 
     //Calling Custom Functions
     drawPlanetSelect();
+
+    for(Label label : labels){
+      label.display();
+    }
   }
 
 
   public void handleKeyPressed(){
+
+      if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
+        p.fill(235, 198, 99);
+        p.changeScene(labels.get(0).getTargetScene(0));
+      }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
+        p.fill(235, 198, 99);
+        p.changeScene(labels.get(1).getTargetScene(3));
+      }
 
   }
 }
