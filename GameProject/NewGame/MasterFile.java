@@ -64,7 +64,7 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 4;
+    private int current = 3;
     private int scenceIndex = 0;
 
     //Floats

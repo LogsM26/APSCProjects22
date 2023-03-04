@@ -38,7 +38,7 @@ public class PlanetSelect3 implements SceneInterface{
 
 
     labels = new ArrayList<Label>();
-    labels.add(new Label(p, p.width/50, p.height-p.height/9, p.width/14, p.height/20, "Return"));
+    labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
     //      p.image(p1, p.width/2+25, p.height/2-125);
     labels.add(new Label(p, p.width/2+125, 400, 375, 375, ""));
   }
@@ -77,7 +77,7 @@ public class PlanetSelect3 implements SceneInterface{
     p.fill(103, 209, 214);
 
       //Planet 1
-      p.text("Levels", p.width/2+260, p.height/2-100);
+      p.text("Constellations", p.width/2+215, p.height/2-100);
       //Planet 2
       //Planet 3
 
