@@ -34,7 +34,7 @@ public class Plant1SelectLevel4 implements SceneInterface{
     this.liquid = liquid;
 
     labels = new ArrayList<Label>();
-    labels.add(new Label(p, 30, 830, 100, 40, "Return"));
+    labels.add(new Label(p, p.width/50, p.height-p.height/9, p.width/14, p.height/20, "Return"));
     labels.add(new Label(p, p.width/8+100, p.height/2+100, 100, 40, "Level 1"));
     labels.add(new Label(p, p.width/3+80+100, p.height/2+100, 100, 40, "Level 2"));
     labels.add(new Label(p, p.width/2+p.width/8+p.width/32+100, p.height/2+100, 100, 40, "Level 3"));
@@ -91,7 +91,11 @@ public class Plant1SelectLevel4 implements SceneInterface{
 
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
-      p.changeScene(labels.get(0).getTargetScene(2));
+        p.fill(235, 198, 99);
+        p.changeScene(labels.get(0).getTargetScene(2));
+    }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
+        p.fill(235, 198, 99);
+        p.changeScene(labels.get(1).getTargetScene(4));
     }
 
 

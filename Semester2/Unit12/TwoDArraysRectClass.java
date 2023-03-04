@@ -13,6 +13,7 @@ public class TwoDArraysRectClass{
 
   private double p;
   private double a;
+    
 
   public TwoDArraysRectClass(String name, double width, double height){
 

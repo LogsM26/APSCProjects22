@@ -46,6 +46,10 @@
   ArrayList of blocks
     grid, 0s and 1s, empty or not
     show where the map pieces can go or something
+    
+    cursor
+    noCursoir function
+    draw the image at p.mouseX and p.mouseY
 */
 
 
@@ -60,7 +64,7 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 3;
+    private int current = 4;
     private int scenceIndex = 0;
 
     //Floats
@@ -70,6 +74,9 @@ public class MasterFile extends PApplet{
 
   //Fun Stuff/Aesthetics
     //Images
+       //Cursor Images
+       PImage dot;
+    
       //Title
       PImage bridge;
 
@@ -80,7 +87,8 @@ public class MasterFile extends PApplet{
 
       //Level Select
       PImage star;
-
+        
+    
     //Fonts
       //Main
       PFont liquid;
@@ -92,7 +100,7 @@ public class MasterFile extends PApplet{
   public void settings(){
 
     //size(1000, 600);
-    //1400, 800
+    //1400, 900
     fullScreen();
 
   }
@@ -116,6 +124,7 @@ public class MasterFile extends PApplet{
 
         //Gameplay
         //scenes.add(new Plant1Game1(this, liquid));
+        scenes.add(new GamePlay5(this, liquid));
 
 
 
@@ -130,7 +139,14 @@ public class MasterFile extends PApplet{
   public void draw(){
 
     scenes.get(current).display();
-
+      
+      
+    //noCursor();
+      
+    dot = loadImage("dot.png");
+    dot.resize(80, 40);
+    image(dot, mouseX, mouseY);
+    
   }
 
 
@@ -201,6 +217,7 @@ public class MasterFile extends PApplet{
     */
 
     scenes.get(current).handleKeyPressed();
+      System.out.print(mouseX + ":" + mouseY + "      ");
   }
 
 

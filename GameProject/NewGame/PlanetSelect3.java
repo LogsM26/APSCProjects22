@@ -38,7 +38,7 @@ public class PlanetSelect3 implements SceneInterface{
 
 
     labels = new ArrayList<Label>();
-    labels.add(new Label(p, 30, 830, 100, 40, "Return"));
+    labels.add(new Label(p, p.width/50, p.height-p.height/9, p.width/14, p.height/20, "Return"));
     //      p.image(p1, p.width/2+25, p.height/2-125);
     labels.add(new Label(p, p.width/2+125, 400, 375, 375, ""));
   }
@@ -109,6 +109,7 @@ public class PlanetSelect3 implements SceneInterface{
       if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);
         p.changeScene(labels.get(0).getTargetScene(0));
+          
       }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);
         p.changeScene(labels.get(1).getTargetScene(3));
