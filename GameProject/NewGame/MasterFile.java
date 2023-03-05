@@ -64,7 +64,7 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 3;
+    private int current = 2;
     private int scenceIndex = 0;
 
     //Floats
@@ -74,8 +74,8 @@ public class MasterFile extends PApplet{
 
   //Fun Stuff/Aesthetics
     //Images
-       //Cursor Images
-       PImage dot;
+      //Cursor Images
+      PImage dot;
     
       //Title
       PImage bridge;
@@ -84,6 +84,7 @@ public class MasterFile extends PApplet{
       PImage p1;
       PImage p2;
       PImage p3;
+      PImage a;
 
       //Level Select
       PImage star;
@@ -117,7 +118,8 @@ public class MasterFile extends PApplet{
         scenes.add(new Manuel2(this, liquid));
 
         //Select
-        scenes.add(new PlanetSelect3(this, p1, p2, p3, liquid));
+        scenes.add(new PlanetSelect3(this, p1, p2, p3, a, liquid));
+        scenes.add(new CharacterSelect3(this, liquid));
 
         //Level Select
         scenes.add(new Plant1SelectLevel4(this, star, liquid));
@@ -217,7 +219,8 @@ public class MasterFile extends PApplet{
     */
 
     scenes.get(current).handleKeyPressed();
-      System.out.print(mouseX + ":" + mouseY + "      ");
+    
+    //System.out.print(mouseX + ":" + mouseY + "      ");
   }
 
 

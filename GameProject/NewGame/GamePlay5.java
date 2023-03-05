@@ -88,6 +88,8 @@ public class GamePlay5 implements SceneInterface{
             
             //down, x-axis
             p.line(i+i, 0, i+i, 750);
+            //labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
+            //p.rect(i, j, i, j);
             
             //across, y-axis
             p.line(0, j+j, 1050, j+j);
@@ -154,7 +156,7 @@ public class GamePlay5 implements SceneInterface{
   public void handleKeyPressed(){
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
-      p.changeScene(labels.get(0).getTargetScene(3));
+      p.changeScene(labels.get(0).getTargetScene(4));
     }
 
 

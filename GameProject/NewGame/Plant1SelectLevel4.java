@@ -97,7 +97,7 @@ public class Plant1SelectLevel4 implements SceneInterface{
         
     }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);
-        p.changeScene(labels.get(1).getTargetScene(4));
+        p.changeScene(labels.get(1).getTargetScene(5));
     }
 
 
