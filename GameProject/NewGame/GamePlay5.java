@@ -14,6 +14,7 @@ public class GamePlay5 implements SceneInterface{
     //Array
         //ArrayLists
         ArrayList<Label> labels;
+        ArrayList<Tile> tiles;
         
         //2DArrays
         int[][] cells = new int[n][n];
@@ -43,7 +44,9 @@ public class GamePlay5 implements SceneInterface{
     //28, 800, 100, 40
     labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
     //labels.add(new Label(p, 28, 800, 100, 40, "Return"));
-
+      
+    tiles = new ArrayList<Tile>();
+    tiles.add(new Tile(p, 100, 100, 100, 100));
   }
 
 
@@ -146,19 +149,47 @@ public class GamePlay5 implements SceneInterface{
     //Calling Custom Functions
     drawGamePlay5();
 
+      
     for(Label label : labels){
       label.display();
     }
+      
+    p.pushMatrix();
+    for(Tile tile : tiles){
+        tile.display();
+    }
+    p.popMatrix();
+    
     
   }
-
+    
+    
+  
+  public void mouseDragged(){
+      
+    //center to the square in the grid
+    //change to snap
+      
+      
+  }
 
   public void handleKeyPressed(){
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
       p.changeScene(labels.get(0).getTargetScene(4));
     }
-
-
+      
+      
+    //use mouse to decide which one rotate
+    //if insde call keyPressed
+    for(Tile tile : tiles){
+        
+        if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
+              tile.keyPressed();
+              System.out.println("gshg");
+        }
+    }
+      
   }
+    
 }
