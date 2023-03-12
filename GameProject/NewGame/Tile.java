@@ -15,7 +15,8 @@ public class Tile{
 
         private int width;
         private int height;
-    
+        
+        //Floats
         private float a = 0;
         
     
@@ -57,6 +58,7 @@ public class Tile{
         p.pushMatrix();
         
         p.translate(x, y);
+        
         p.rotate(a);
         p.rectMode(p.CENTER);
         p.rect(0, 0, width, height);
@@ -66,7 +68,6 @@ public class Tile{
         
         p.popMatrix();
     }
-    
     
     public void display(){
         
@@ -91,13 +92,14 @@ public class Tile{
     }
     
     
-    public void keyPressed(){
+    
+    /*public void keyPressed(){
         
         //p.pushMatrix();
         
         if(p.keyCode == p.RIGHT){
             a += p.PI/2;
-            System.out.println("irght");
+            //System.out.println("irght");
             
         }else if(p.keyCode == p.LEFT){
             a += p.PI/2;
@@ -107,6 +109,32 @@ public class Tile{
             a += 0;
         }
         
+    }*/
+    
+    public void resetVari(){
+        //p.rectMode(p.CENTER) = p.mouseX + p.mouseY;
+        x = p.mouseX;
+        y = p.mouseY;
     }
+    
+    
+    
+    public void mouseClicked(){
+
+        a += p.PI/2;
+    }
+    
+    public void mouseDragged(){
+      
+        //center to the square in the grid
+        //change to snap
+      
+          if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
+            tile.resetVari();
+        }
+      }
+
+    }
+
     
 }

@@ -163,33 +163,19 @@ public class GamePlay5 implements SceneInterface{
     
   }
     
-    
-  
-  public void mouseDragged(){
-      
-    //center to the square in the grid
-    //change to snap
-      
-      
-  }
 
+    
   public void handleKeyPressed(){
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
       p.changeScene(labels.get(0).getTargetScene(4));
     }
       
-      
     //use mouse to decide which one rotate
     //if insde call keyPressed
     for(Tile tile : tiles){
-        
-        if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
-              tile.keyPressed();
-              System.out.println("gshg");
-        }
+        tile.mouseClicked();
     }
-      
   }
     
 }
