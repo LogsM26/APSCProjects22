@@ -186,6 +186,12 @@ public class GamePlay5 implements SceneInterface{
     }
       
   }
+    
+//the box is wrong
+//it moves when its inside not when actually dragged
+//rotating doesnt work when calling mousedragged
+//the roating only works with the mouse after the key os pressed once
+//it doesnt start or stop dragging
    
     
 }
