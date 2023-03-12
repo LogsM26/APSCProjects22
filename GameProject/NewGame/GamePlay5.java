@@ -46,7 +46,8 @@ public class GamePlay5 implements SceneInterface{
     //labels.add(new Label(p, 28, 800, 100, 40, "Return"));
       
     tiles = new ArrayList<Tile>();
-    tiles.add(new Tile(p, 100, 100, 100, 100));
+    tiles.add(new Tile(p, 0, 0, 100, 100));
+    //tiles.add(new Tile(p, 0, 0, 100, 50));
   }
 
 
@@ -157,6 +158,10 @@ public class GamePlay5 implements SceneInterface{
     p.pushMatrix();
     for(Tile tile : tiles){
         tile.display();
+        
+        if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
+            tile.mouseDragged();
+        }
     }
     p.popMatrix();
     
@@ -174,8 +179,13 @@ public class GamePlay5 implements SceneInterface{
     //use mouse to decide which one rotate
     //if insde call keyPressed
     for(Tile tile : tiles){
-        tile.mouseClicked();
+        
+        if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
+            tile.keyPressed();
+        }
     }
+      
   }
+   
     
 }
