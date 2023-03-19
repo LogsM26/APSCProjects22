@@ -223,6 +223,16 @@ public class MasterFile extends PApplet{
     //System.out.print(mouseX + ":" + mouseY + "      ");
   }
     
+  public void mouseDragged(){
+      
+      scenes.get(current).handleMouseDragged();
+  }
+    
+  public void mouseReleased(){
+      
+      scenes.get(current).handleMouseReleased();
+  }
+    
   public void keyPressed(){
       
       scenes.get(current).handleKeyPressed();

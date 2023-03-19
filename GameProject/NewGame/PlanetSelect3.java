@@ -44,14 +44,16 @@ public class PlanetSelect3 implements SceneInterface{
 
 
     labels = new ArrayList<Label>();
+      
     labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
     //p.image(p1, p.width/2+25, p.height/2-125);
     labels.add(new Label(p, p.width/2+125, 400, 375, 375, ""));
     
-    p.pushMatrix();
-    p.rotate(p.PI/3);
     labels.add(new Label(p, p.width/4+p.width/50, p.height/2, p.width/8, p.height/24, "Characters"));
-    p.popMatrix();
+      
+    labels.add(new Label(p, p.width/8, p.height/3, p.width/7, p.height/5, ""));
+    
+    labels.add(new Label(p, p.width/2, p.height/8, p.width/7, p.height/5, ""));
   }
 
 
@@ -96,6 +98,7 @@ public class PlanetSelect3 implements SceneInterface{
       //Planet 1
       p.text("Constellations", p.width/2+215, p.height/2-100);
       //Planet 2
+      p.text("Manual", p.width/6, p.height/4);
       //Planet 3
 
     /*p.textFont(liquid);
@@ -138,6 +141,14 @@ public class PlanetSelect3 implements SceneInterface{
 
   }
 
+  public void handleMouseDragged(){
+      
+  }
+ 
+  public void handleMouseReleased(){
+      
+  }
+    
   public void handleKeyPressed(){
       
   }

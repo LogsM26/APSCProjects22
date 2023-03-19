@@ -82,9 +82,17 @@ public class CharacterSelect3 implements SceneInterface{
         p.changeScene(labels.get(0).getTargetScene(2));
     }
   }
+  
+  public void handleMouseDragged(){
+      
+  }
     
- public void handleKeyPressed(){
+  public void handleMouseReleased(){
+      
+  }
+    
+  public void handleKeyPressed(){
      
- }
+  }
     
 }

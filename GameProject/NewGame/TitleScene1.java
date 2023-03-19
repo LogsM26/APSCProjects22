@@ -125,6 +125,14 @@ public class TitleScene1 implements SceneInterface{
     }
   }
     
+  public void handleMouseDragged(){
+      
+  }
+
+  public void handleMouseReleased(){
+      
+  }
+    
   public void handleKeyPressed(){
       
   }

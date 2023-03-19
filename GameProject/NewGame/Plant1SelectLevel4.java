@@ -102,7 +102,15 @@ public class Plant1SelectLevel4 implements SceneInterface{
 
 
   }
-  
+    
+  public void handleMouseDragged(){
+      
+  }
+
+  public void handleMouseReleased(){
+      
+  }
+    
   public void handleKeyPressed(){
       
   }

@@ -9,16 +9,18 @@ public class GamePlay5 implements SceneInterface{
     //Variables
     private MasterFile p;
         //Integers
-        int n = 600;
+        int a = 580;
+        int d = 425;
 
     //Array
         //ArrayLists
         ArrayList<Label> labels;
         ArrayList<Tile> tiles;
             private Tile active = null;
+        ArrayList<Grid> grids;
         
         //2DArrays
-        int[][] cells = new int[n][n];
+        //int[][] cells = new int[n][n];
 
 
   //Fun Stuff/Aesthetics
@@ -49,6 +51,8 @@ public class GamePlay5 implements SceneInterface{
     tiles = new ArrayList<Tile>();
     tiles.add(new Tile(p, 0, 0, 140, 140));
     //tiles.add(new Tile(p, 0, 0, 100, 50));
+      
+    grids = new ArrayList<Grid>();
   }
 
 
@@ -76,7 +80,8 @@ public class GamePlay5 implements SceneInterface{
     //2D Array Things
     //Lines as Labels? Or make own isInside for Tiles?
     //call grid function
-      
+    
+    /*
     p.pushMatrix();
     p.translate(100, 100);
       
@@ -89,17 +94,19 @@ public class GamePlay5 implements SceneInterface{
             
             //draw a line down from first i value
             //draw a line left from first j value
-            p.strokeWeight(8);
-            p.stroke(255, 255, 255);
+            //p.strokeWeight(8);
+            //p.stroke(255, 255, 255);
             
             
             //down, x-axis
             p.line(i+i, 0, i+i, 750);
             //labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
             //p.rect(i, j, i, j);
+            grids.add(new Grid(p, i+i, i+i, 140, 140));
             
             //across, y-axis
             p.line(0, j+j, 1050, j+j);
+            grids.add(new Grid(p, j+j, j+j, 140, 140));
             
             
             if(i == j){
@@ -121,7 +128,24 @@ public class GamePlay5 implements SceneInterface{
         }
     }
     
+    
     p.popMatrix();
+    */
+    
+    //p.pushMatrix();
+    //p.translate(50, 50);
+      
+    for(int i = 50; i < a; i+=65){
+        for(int j = 50; j < d; j+=65){
+            
+            //down, x-axis
+            grids.add(new Grid(p, i+i, j+j, 140, 140));
+            
+            //across, y-axis
+            //grids.add(new Grid(p, i, j, 140, 140));
+        }
+    }
+    //p.popMatrix();
     
       
     
@@ -153,29 +177,42 @@ public class GamePlay5 implements SceneInterface{
     //Calling Custom Functions
     drawGamePlay5();
 
+    
+    //p.pushMatrix();
+    for(Grid grid : grids){
+        grid.display();
+    }
+    //p.popMatrix();
+      
       
     for(Label label : labels){
+      p.fill(209, 73, 19);
       label.display();
     }
+      
       
     p.pushMatrix();
     for(Tile tile : tiles){
         tile.display();
         
         if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
-            handleMouseDragged();
+            //handleMouseDragged();
         }else{
-            handleMouseReleased();
+            //handleMouseReleased();
         }
     }
     p.popMatrix();
-    
+      
+      
     
   }
+    
     
 
     
   public void handleMouseClicked(){
+      
+    //System.out.println(
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
       p.changeScene(labels.get(0).getTargetScene(4));
@@ -195,6 +232,8 @@ public class GamePlay5 implements SceneInterface{
     
   public void handleMouseDragged(){
       
+      System.out.println("Dragging");
+      
       for(Tile tile : tiles){
           
           if(active != null){
@@ -205,7 +244,7 @@ public class GamePlay5 implements SceneInterface{
       }
   }
 
-  public void mouseReleased(){
+  public void handleMouseReleased(){
       
         active = null;
         System.out.println("Null");

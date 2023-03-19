@@ -33,7 +33,7 @@ public class Tile{
     }
     
     public int getTX() {return x;}
-    public int getY() {return y;}
+    public int getTY() {return y;}
     
     //Things Needed
         //Rect
