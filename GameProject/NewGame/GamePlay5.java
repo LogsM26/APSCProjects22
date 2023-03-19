@@ -15,6 +15,7 @@ public class GamePlay5 implements SceneInterface{
         //ArrayLists
         ArrayList<Label> labels;
         ArrayList<Tile> tiles;
+            private Tile active = null;
         
         //2DArrays
         int[][] cells = new int[n][n];
@@ -46,7 +47,7 @@ public class GamePlay5 implements SceneInterface{
     //labels.add(new Label(p, 28, 800, 100, 40, "Return"));
       
     tiles = new ArrayList<Tile>();
-    tiles.add(new Tile(p, 0, 0, 100, 100));
+    tiles.add(new Tile(p, 0, 0, 140, 140));
     //tiles.add(new Tile(p, 0, 0, 100, 50));
   }
 
@@ -74,9 +75,11 @@ public class GamePlay5 implements SceneInterface{
     
     //2D Array Things
     //Lines as Labels? Or make own isInside for Tiles?
+    //call grid function
       
     p.pushMatrix();
     p.translate(100, 100);
+      
     
     //i is the x-axis
     for(int i = 0; i < n; i+=75){
@@ -160,7 +163,9 @@ public class GamePlay5 implements SceneInterface{
         tile.display();
         
         if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
-            tile.mouseDragged();
+            handleMouseDragged();
+        }else{
+            handleMouseReleased();
         }
     }
     p.popMatrix();
@@ -170,28 +175,54 @@ public class GamePlay5 implements SceneInterface{
     
 
     
-  public void handleKeyPressed(){
+  public void handleMouseClicked(){
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
       p.changeScene(labels.get(0).getTargetScene(4));
     }
+    
+      
+    //Tile Stuff
+    active = null;
+    for(Tile tile : tiles){
+        
+        if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
+            active = tile;
+        }
+    }
+
+  }
+    
+  public void handleMouseDragged(){
+      
+      for(Tile tile : tiles){
+          
+          if(active != null){
+              tile.x = p.mouseX;
+              tile.y = p.mouseY;
+              System.out.println("Not Null");
+          }
+      }
+  }
+
+  public void mouseReleased(){
+      
+        active = null;
+        System.out.println("Null");
+  }
+    
+  public void handleKeyPressed(){
       
     //use mouse to decide which one rotate
     //if insde call keyPressed
     for(Tile tile : tiles){
         
         if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
-            tile.keyPressed();
+            tile.keyPressedTile();
+            //tile.mouseClicked();
         }
     }
-      
   }
-    
-//the box is wrong
-//it moves when its inside not when actually dragged
-//rotating doesnt work when calling mousedragged
-//the roating only works with the mouse after the key os pressed once
-//it doesnt start or stop dragging
    
     
 }

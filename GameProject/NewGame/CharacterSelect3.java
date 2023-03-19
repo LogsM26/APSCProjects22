@@ -75,12 +75,16 @@ public class CharacterSelect3 implements SceneInterface{
   }
  
 
-  public void handleKeyPressed(){
+  public void handleMouseClicked(){
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);
         p.changeScene(labels.get(0).getTargetScene(2));
     }
   }
+    
+ public void handleKeyPressed(){
+     
+ }
     
 }

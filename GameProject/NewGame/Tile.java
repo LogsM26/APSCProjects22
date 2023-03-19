@@ -10,8 +10,8 @@ public class Tile{
     private PApplet p;
     
         //Integers
-        private int x;
-        private int y;
+        public int x;
+        public int y;
 
         private int width;
         private int height;
@@ -32,7 +32,8 @@ public class Tile{
         this.height = height;
     }
     
-    
+    public int getTX() {return x;}
+    public int getY() {return y;}
     
     //Things Needed
         //Rect
@@ -61,13 +62,14 @@ public class Tile{
         
         p.rotate(a);
         p.rectMode(p.CENTER);
-        p.rect(x*0, y*0, width, height);
+        p.rect(0, 0, width, height);
         
         p.fill(209, 73, 19);
         p.rect(0, 0, width, height/2);
         
         p.popMatrix();
     }
+    
     
     
     
@@ -79,16 +81,21 @@ public class Tile{
     
     public boolean isInsideTile(float a, float b){
         
-        if( (x < a && a < x+width) && (y < b && b < y+height) ){
+        if( (x-width/2 < a && a < x+width/2) 
+            && (y-height/2 < b && b < y+height/2) ){
             return true;
         }else{
             return false;
         }
     }
     
+    public void isNearCenter(){
+        //call location in relation to the grid inside the Tile class
+    }
     
     
-    public void keyPressed(){
+    
+    public void keyPressedTile(){
         
         //p.pushMatrix();
         
@@ -101,12 +108,16 @@ public class Tile{
         
     }
     
-    public void mouseClicked(){
+    /*
+    public void mouseClickedTile(){
 
         //a += p.PI/2;
+        x = p.mouseX;
+        y = p.mouseY;
+        //return true;
     }
     
-    public void mouseDragged(){
+    public void mouseDraggedTile(){
       
         //center to the square in the grid
         //change to snap
@@ -114,6 +125,11 @@ public class Tile{
         x = p.mouseX;
         y = p.mouseY;
     }
+    
+    public void mouseReleasedTile(){
+        
+    }
+    */
 
     
 }

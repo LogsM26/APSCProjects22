@@ -121,7 +121,7 @@ public class PlanetSelect3 implements SceneInterface{
   }
 
 
-  public void handleKeyPressed(){
+  public void handleMouseClicked(){
 
       if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);
@@ -136,5 +136,9 @@ public class PlanetSelect3 implements SceneInterface{
         p.changeScene(labels.get(2).getTargetScene(3));
       }
 
+  }
+
+  public void handleKeyPressed(){
+      
   }
 }

@@ -88,7 +88,7 @@ public class Plant1SelectLevel4 implements SceneInterface{
   }
 
 
-  public void handleKeyPressed(){
+  public void handleMouseClicked(){
 
 
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
@@ -101,5 +101,9 @@ public class Plant1SelectLevel4 implements SceneInterface{
     }
 
 
+  }
+  
+  public void handleKeyPressed(){
+      
   }
 }

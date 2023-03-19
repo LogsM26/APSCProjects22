@@ -218,9 +218,14 @@ public class MasterFile extends PApplet{
     }
     */
 
-    scenes.get(current).handleKeyPressed();
+    scenes.get(current).handleMouseClicked();
     
     //System.out.print(mouseX + ":" + mouseY + "      ");
+  }
+    
+  public void keyPressed(){
+      
+      scenes.get(current).handleKeyPressed();
   }
 
 
