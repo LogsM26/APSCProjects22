@@ -50,6 +50,11 @@
     cursor
     noCursoir function
     draw the image at p.mouseX and p.mouseY
+    
+    Save strings function to save position in the game
+        whether they collected the star(s) from the past levels
+        saves to a file
+        can call when running again
 */
 
 
@@ -148,6 +153,7 @@ public class MasterFile extends PApplet{
     dot = loadImage("dot.png");
     dot.resize(80, 40);
     image(dot, mouseX, mouseY);
+      
     
   }
 
@@ -222,11 +228,13 @@ public class MasterFile extends PApplet{
     
     //System.out.print(mouseX + ":" + mouseY + "      ");
   }
-    
+
+  
   public void mouseDragged(){
       
       scenes.get(current).handleMouseDragged();
   }
+  
     
   public void mouseReleased(){
       

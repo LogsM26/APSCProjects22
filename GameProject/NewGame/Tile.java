@@ -10,11 +10,11 @@ public class Tile{
     private PApplet p;
     
         //Integers
-        public int x;
-        public int y;
+        public float x;
+        public float y;
 
-        private int width;
-        private int height;
+        private float width;
+        private float height;
         
         //Floats
         private float a = 0;
@@ -22,18 +22,19 @@ public class Tile{
     
     
     
-    public Tile(PApplet p, int x, int y, int width, int height){
+    public Tile(PApplet p, float x, float y, float width, float height){
         
         this.p = p;
         
         this.x = x;
         this.y = y;
+        
         this.width = width;
         this.height = height;
     }
     
-    public int getTX() {return x;}
-    public int getTY() {return y;}
+    public float getTX() {return x;}
+    public float getTY() {return y;}
     
     //Things Needed
         //Rect
@@ -47,6 +48,33 @@ public class Tile{
         //Randomize
             //each tile has a number
             //different for each level
+    
+    
+    //Character and Mouse
+    public void setPositionTile(float o, float t){
+        
+        o = x;
+        t = y;
+    }
+    
+    
+    public void isOutsideCharacter(){
+        
+        //Character Touches the border: velocity = 0
+    }
+    
+    public boolean isInsideTile(float a, float b){
+        
+        
+        if( (x-width/2 < a && a < x+width/2) 
+            && (y-height/2 < b && b < y+height/2) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    
     
     
     //Visual Stuff
@@ -72,29 +100,7 @@ public class Tile{
     
     
     
-    
-    //Character and Mouse
-    public void isOutside(){
-        
-        //Character Touches the border: velocity = 0
-    }
-    
-    public boolean isInsideTile(float a, float b){
-        
-        if( (x-width/2 < a && a < x+width/2) 
-            && (y-height/2 < b && b < y+height/2) ){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    
-    public void isNearCenter(){
-        //call location in relation to the grid inside the Tile class
-    }
-    
-    
-    
+    //Mouse Stuff
     public void keyPressedTile(){
         
         //p.pushMatrix();

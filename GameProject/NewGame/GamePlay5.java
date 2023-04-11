@@ -9,8 +9,9 @@ public class GamePlay5 implements SceneInterface{
     //Variables
     private MasterFile p;
         //Integers
-        int a = 580;
-        int d = 425;
+        int a = 65*9;
+        int d = 65*6;
+        private int numTiles = 2;
 
     //Array
         //ArrayLists
@@ -42,15 +43,31 @@ public class GamePlay5 implements SceneInterface{
     //Fonts
     this.liquid = liquid;
 
+      
     labels = new ArrayList<Label>();
     //1400, 800 
     //28, 800, 100, 40
     labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
     //labels.add(new Label(p, 28, 800, 100, 40, "Return"));
       
+      
     tiles = new ArrayList<Tile>();
-    tiles.add(new Tile(p, 0, 0, 140, 140));
+    for(int i = 0; i < numTiles; i++){
+        Tile t = new Tile(p, p.width-100, p.height-200, 140, 140);
+        tiles.add(t);
+    }
+      
+    //tiles.add(new Tile(p, 0, 0, 140, 140));
     //tiles.add(new Tile(p, 0, 0, 100, 50));
+      /*
+    Tile t = new Tile(p, p.width-100, p.height-200, 130, 130);
+    tiles.add(t);
+
+    Tile t2 = new Tile(p, p.width-100, p.height-60, 130, 130);
+    tiles.add(t2);
+        */
+
+      
       
     grids = new ArrayList<Grid>();
   }
@@ -135,11 +152,14 @@ public class GamePlay5 implements SceneInterface{
     //p.pushMatrix();
     //p.translate(50, 50);
       
+      //j is scolum
+      //i is row
+      
     for(int i = 50; i < a; i+=65){
         for(int j = 50; j < d; j+=65){
             
             //down, x-axis
-            grids.add(new Grid(p, i+i, j+j, 140, 140));
+            grids.add(new Grid(p, i+i, j+j, 132, 129));
             
             //across, y-axis
             //grids.add(new Grid(p, i, j, 140, 140));
@@ -169,7 +189,7 @@ public class GamePlay5 implements SceneInterface{
   }
 
 
-
+//int ce = (int) rcolro(randim(255), )
 
   //Functions from the Interface
   public void display(){
@@ -232,22 +252,35 @@ public class GamePlay5 implements SceneInterface{
     
   public void handleMouseDragged(){
       
-      System.out.println("Dragging");
-      
-      for(Tile tile : tiles){
-          
-          if(active != null){
-              tile.x = p.mouseX;
-              tile.y = p.mouseY;
-              System.out.println("Not Null");
-          }
+      //System.out.println("Dragging"); 
+
+      if(active != null){
+            active.x = p.mouseX;
+            active.y = p.mouseY;
+            //System.out.println("Not Null");
       }
   }
 
   public void handleMouseReleased(){
       
+        //active postition to target x, y = center of a grid bock  
+      
         active = null;
-        System.out.println("Null");
+        //System.out.println("Null"); 
+      
+        
+        for(Grid g : grids){
+            if(active != null){
+                
+                if(g.isInsideGrid(p.mouseX, p.mouseY) == true){
+                    active.setPositionTile(g.getCX(), g.getCY());
+                    //active.x = g.getCX();
+                    //active.y = g.getCY();
+                    
+                    System.out.println("In");
+                }
+            } 
+        }
   }
     
   public void handleKeyPressed(){

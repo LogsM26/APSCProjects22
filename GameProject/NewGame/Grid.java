@@ -13,17 +13,17 @@ public class Grid{
     private PApplet p;
     
         //Integers
-        private int x;
-        private int y;
+        private float x;
+        private float y;
     
-        private int width;
-        private int height;
+        private float width;
+        private float height;
         
         //private color c;
     
     
     
-    public Grid(PApplet p, int x, int y, int width, int height /*, color c*/){
+    public Grid(PApplet p, float x, float y, float width, float height /*, color c*/){
         
         this.p = p;
         
@@ -36,11 +36,34 @@ public class Grid{
         //this.c = c;
     }
     
-    //public int getCenter() {return ;}
+    public float getCX() {return x/2;}
+    public float getCY() {return y/2;}
     
-    public void drawGrid(int i, int j){
+    /*public void drawGrid(int i, int j){
+        //draw using 2D Array
+        //each box displays itself with own position
+    */
+    
+    public boolean isInsideGrid(float a, float b){
         
+        /*
+        if( (x-width/2 < a && a < x+width/2) 
+            && (y-height/2 < b && b < y+height/2) ){
+            return true;
+        }else{
+            return false;
+        }
+        */
+        
+        
+        
+        if( (x < a && a < x+width) && (y < b && b < y+height) ){
+            return true;
+        }else{
+            return false;
+        }
     }
+    
     
     public void display(){
         
@@ -50,5 +73,7 @@ public class Grid{
         p.stroke(255, 255, 255);
         p.fill(22, 52, 79);
         p.rect(x, y, width, height);
+        
     }
+    
 }
