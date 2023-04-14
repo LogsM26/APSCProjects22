@@ -36,8 +36,8 @@ public class Grid{
         //this.c = c;
     }
     
-    public float getCX() {return x/2;}
-    public float getCY() {return y/2;}
+    public float getCX() {return x;}
+    public float getCY() {return y;}
     
     /*public void drawGrid(int i, int j){
         //draw using 2D Array
@@ -46,29 +46,21 @@ public class Grid{
     
     public boolean isInsideGrid(float a, float b){
         
-        /*
+        
         if( (x-width/2 < a && a < x+width/2) 
             && (y-height/2 < b && b < y+height/2) ){
             return true;
         }else{
             return false;
         }
-        */
         
-        
-        
-        if( (x < a && a < x+width) && (y < b && b < y+height) ){
-            return true;
-        }else{
-            return false;
-        }
     }
     
     
     public void display(){
         
         //p.translate(100, 100);
-        
+        p.rectMode(p.CENTER);
         p.strokeWeight(2);
         p.stroke(255, 255, 255);
         p.fill(22, 52, 79);

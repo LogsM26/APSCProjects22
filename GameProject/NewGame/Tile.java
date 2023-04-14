@@ -51,18 +51,6 @@ public class Tile{
     
     
     //Character and Mouse
-    public void setPositionTile(float o, float t){
-        
-        o = x;
-        t = y;
-    }
-    
-    
-    public void isOutsideCharacter(){
-        
-        //Character Touches the border: velocity = 0
-    }
-    
     public boolean isInsideTile(float a, float b){
         
         
@@ -74,10 +62,22 @@ public class Tile{
         }
     }
     
+    public void setPositionTile(float o, float t){
+        
+        x = o;
+        y = t;
+    }
+    
+    
+    public void isOutsideCharacter(){
+        
+        //Character Touches the border: velocity = 0
+    }
     
     
     
     //Visual Stuff
+    //REGULAR TEST
     public void display(){
         
         p.noStroke();
@@ -94,6 +94,100 @@ public class Tile{
         
         p.fill(209, 73, 19);
         p.rect(0, 0, width, height/2);
+        
+        p.popMatrix();
+    }
+    
+    //STRAIGHT PATH
+    public void displaySP(){
+        
+        p.noStroke();
+        p.fill(159, 168, 98);
+        
+        p.pushMatrix();
+        p.translate(x, y);
+        p.rotate(a);
+        p.rectMode(p.CENTER);
+        
+        p.rect(0, 0, width, height);
+        
+        p.fill(173, 110, 59);
+        p.rect(0, 0, width, height/4);
+        
+        p.popMatrix();
+
+    }
+    
+    //TURN
+    public void displayT(){
+        
+        p.noStroke();
+        p.fill(159, 168, 98);
+        
+        p.pushMatrix();
+        p.translate(x, y);
+        p.rotate(a);
+        p.rectMode(p.CENTER);
+        
+        p.rect(0, 0, width, height);
+        
+        p.fill(173, 110, 59);
+        p.translate(x-10, y+10);
+        //p.rectMode(p.CORNER);
+        p.rect(0, 0, 100, 100);
+        //p.rect(0, 0, width/2, height/2);
+        
+        p.popMatrix();
+    }
+    
+    //CROSS
+    public void displayC(){
+        
+        p.noStroke();
+        p.fill(159, 168, 98);
+        
+        p.pushMatrix();
+        p.translate(x, y);
+        p.rotate(a);
+        p.rectMode(p.CENTER);
+        
+        p.rect(0, 0, width, height);
+        
+        p.fill(173, 110, 59);
+        p.rect(0, 0, width, height/4);
+        p.rect(0, 0, width/4, height);
+        
+        p.popMatrix();
+    }
+    
+    //GRASS
+    public void displayG(){
+        
+        p.noStroke();
+        p.fill(159, 168, 98);
+        
+        p.pushMatrix();
+        p.translate(x, y);
+        p.rotate(a);
+        p.rectMode(p.CENTER);
+        
+        p.rect(0, 0, width, height);
+        
+        p.popMatrix();
+    }
+    
+    //WATER
+    public void displayW(){
+        
+        p.noStroke();
+        p.fill(101, 207, 202);
+        
+        p.pushMatrix();
+        p.translate(x, y);
+        p.rotate(a);
+        p.rectMode(p.CENTER);
+        
+        p.rect(0, 0, width, height);
         
         p.popMatrix();
     }

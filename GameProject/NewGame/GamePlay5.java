@@ -11,7 +11,7 @@ public class GamePlay5 implements SceneInterface{
         //Integers
         int a = 65*9;
         int d = 65*6;
-        private int numTiles = 2;
+        private int numTiles = 1;
 
     //Array
         //ArrayLists
@@ -213,7 +213,7 @@ public class GamePlay5 implements SceneInterface{
       
     p.pushMatrix();
     for(Tile tile : tiles){
-        tile.display();
+        tile.displayT();
         
         if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
             //handleMouseDragged();
@@ -265,22 +265,21 @@ public class GamePlay5 implements SceneInterface{
       
         //active postition to target x, y = center of a grid bock  
       
-        active = null;
-        //System.out.println("Null"); 
+       //System.out.println("Null"); 
       
         
         for(Grid g : grids){
-            if(active != null){
-                
-                if(g.isInsideGrid(p.mouseX, p.mouseY) == true){
-                    active.setPositionTile(g.getCX(), g.getCY());
-                    //active.x = g.getCX();
-                    //active.y = g.getCY();
+
+            if( (active != null) && (g.isInsideGrid(p.mouseX, p.mouseY) == true)){
+                active.setPositionTile(g.getCX(), g.getCY());
+                //active.x = g.getCX();
+                //active.y = g.getCY();
                     
-                    System.out.println("In");
-                }
+                //System.out.println("In");
             } 
         }
+      
+        active = null;
   }
     
   public void handleKeyPressed(){
