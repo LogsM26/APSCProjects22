@@ -121,21 +121,29 @@ public class Tile{
     //TURN
     public void displayT(){
         
+        //Grass: 159, 168, 98
+        //Ground: 173, 110, 59
         p.noStroke();
-        p.fill(159, 168, 98);
+        p.fill(173, 110, 59);
+        
         
         p.pushMatrix();
+        
         p.translate(x, y);
         p.rotate(a);
-        p.rectMode(p.CENTER);
         
+        p.rectMode(p.CENTER);
         p.rect(0, 0, width, height);
         
-        p.fill(173, 110, 59);
-        p.translate(x-10, y+10);
         //p.rectMode(p.CORNER);
-        p.rect(0, 0, 100, 100);
-        //p.rect(0, 0, width/2, height/2);
+        //p.fill(159, 168, 98);
+        //p.rect(0, 0, 
+        
+        p.rectMode(p.CORNER);
+        p.fill(159, 168, 98);
+        p.rect(10, 10, width/2-10, height/2-10);
+        p.rect(-70, -70, width, height/2-20);
+        p.rect(-70, -70, width/2-20, height);
         
         p.popMatrix();
     }

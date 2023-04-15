@@ -14,4 +14,6 @@ public class Character{
         
         this.p = p;
     }
+    
+    //Move with WASD
 }

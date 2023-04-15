@@ -98,7 +98,7 @@ public class PlanetSelect3 implements SceneInterface{
       //Planet 1
       p.text("Constellations", p.width/2+215, p.height/2-100);
       //Planet 2
-      p.text("Manual", p.width/6, p.height/4);
+      p.text("Playing Guide", p.width/7, p.height/4);
       //Planet 3
 
     /*p.textFont(liquid);
@@ -129,6 +129,10 @@ public class PlanetSelect3 implements SceneInterface{
       if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);
         p.changeScene(labels.get(0).getTargetScene(0));
+        
+      }else if(labels.get(3).isInside(p.mouseX, p.mouseY) == true){
+          p.fill(235, 198, 99);
+          p.changeScene(labels.get(3).getTargetScene(1));
           
       }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
         p.fill(235, 198, 99);

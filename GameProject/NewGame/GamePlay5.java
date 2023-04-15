@@ -11,7 +11,8 @@ public class GamePlay5 implements SceneInterface{
         //Integers
         int a = 65*9;
         int d = 65*6;
-        private int numTiles = 1;
+        private int numTiles = 2;
+        
 
     //Array
         //ArrayLists
@@ -56,18 +57,7 @@ public class GamePlay5 implements SceneInterface{
         Tile t = new Tile(p, p.width-100, p.height-200, 140, 140);
         tiles.add(t);
     }
-      
-    //tiles.add(new Tile(p, 0, 0, 140, 140));
-    //tiles.add(new Tile(p, 0, 0, 100, 50));
-      /*
-    Tile t = new Tile(p, p.width-100, p.height-200, 130, 130);
-    tiles.add(t);
 
-    Tile t2 = new Tile(p, p.width-100, p.height-60, 130, 130);
-    tiles.add(t2);
-        */
-
-      
       
     grids = new ArrayList<Grid>();
   }
@@ -92,7 +82,7 @@ public class GamePlay5 implements SceneInterface{
     p.textSize(30);
     p.fill(209, 73, 19);
       
-      
+    
     
     //2D Array Things
     //Lines as Labels? Or make own isInside for Tiles?
@@ -210,20 +200,14 @@ public class GamePlay5 implements SceneInterface{
       label.display();
     }
       
-      
+     
     p.pushMatrix();
     for(Tile tile : tiles){
-        tile.displayT();
+                
+        //tile.displaySP();
         
-        if(tile.isInsideTile(p.mouseX, p.mouseY) == true){
-            //handleMouseDragged();
-        }else{
-            //handleMouseReleased();
-        }
     }
     p.popMatrix();
-      
-      
     
   }
     

@@ -152,7 +152,7 @@ public class MasterFile extends PApplet{
       
     dot = loadImage("dot.png");
     dot.resize(80, 40);
-    image(dot, mouseX, mouseY);
+    //image(dot, mouseX, mouseY);
       
     
   }
