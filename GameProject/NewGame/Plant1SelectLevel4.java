@@ -114,4 +114,8 @@ public class Plant1SelectLevel4 implements SceneInterface{
   public void handleKeyPressed(){
       
   }
+    
+  public void handleKeyReleased(){
+    
+  }
 }

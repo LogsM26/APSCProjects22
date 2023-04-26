@@ -69,7 +69,7 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 1;
+    private int current = 5;
     private int scenceIndex = 0;
 
     //Floats
@@ -93,11 +93,21 @@ public class MasterFile extends PApplet{
 
       //Level Select
       PImage star;
+    
+      //Character
+      //PImage face;
+      //PImage right;
+      //PImage left;
+      //PImage front;
         
     
     //Fonts
       //Main
       PFont liquid;
+    
+    
+  //Characters
+    Character link;
 
 
 
@@ -132,13 +142,19 @@ public class MasterFile extends PApplet{
         //Gameplay
         //scenes.add(new Plant1Game1(this, liquid));
         scenes.add(new GamePlay5(this, liquid));
-
+      
 
 
     //Fun Stuff
 
       //Fonts
       liquid = createFont("DkLiquidEmbrace-YBvv.ttf", 75);
+      
+      
+
+    //Character
+    //PApplet p, float x, float y, float vx, float vy, PImage face, PImage right, PImage left, PImage front
+      //link = new Character(p, width/2, height/2, 5, 5, face, right, left, front);
 
   }
 
@@ -244,6 +260,12 @@ public class MasterFile extends PApplet{
   public void keyPressed(){
       
       scenes.get(current).handleKeyPressed();
+      
+  }
+    
+  public void keyReleased(){
+      
+      scenes.get(current).handleKeyReleased();
   }
 
 

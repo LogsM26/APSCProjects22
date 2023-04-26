@@ -19,6 +19,8 @@ public class GamePlay5 implements SceneInterface{
         ArrayList<Label> labels;
         ArrayList<Tile> tiles;
             private Tile active = null;
+        ArrayList<Tile> tiles2;
+        ArrayList<Tile> tiles3;
         ArrayList<Grid> grids;
         
         //2DArrays
@@ -27,10 +29,19 @@ public class GamePlay5 implements SceneInterface{
 
   //Fun Stuff/Aesthetics
     //Images
+        //Character
+        PImage face;
+        PImage right;
+        PImage left;
+        PImage front;
     
 
     //Fonts
     PFont liquid;
+    
+ 
+    //Character
+    Character link;
 
 
 
@@ -44,22 +55,37 @@ public class GamePlay5 implements SceneInterface{
     //Fonts
     this.liquid = liquid;
 
+    //ArrayLists
+        labels = new ArrayList<Label>();
+        //1400, 800 
+        //28, 800, 100, 40
+        labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
+        //labels.add(new Label(p, 28, 800, 100, 40, "Return"));
       
-    labels = new ArrayList<Label>();
-    //1400, 800 
-    //28, 800, 100, 40
-    labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
-    //labels.add(new Label(p, 28, 800, 100, 40, "Return"));
       
+        tiles = new ArrayList<Tile>();
+        for(int i = 0; i < numTiles; i++){
+            Tile t = new Tile(p, 0, (float) p.width-100, (float) p.height-200, (float) 140, (float) 140);
+            tiles.add(t);
+        }
+        
       
-    tiles = new ArrayList<Tile>();
-    for(int i = 0; i < numTiles; i++){
-        Tile t = new Tile(p, p.width-100, p.height-200, 140, 140);
-        tiles.add(t);
-    }
+        //Starting
+        tiles2 = new ArrayList<Tile>();
+        tiles2.add(new Tile(p, 0, (float) p.width/4, (float) p.height/2-20, (float) 140, (float) 140));
+      
+        //Ending
+        tiles3 = new ArrayList<Tile>();
+        tiles3.add(new Tile(p, 0, (float) p.width/4, (float) p.height/2,
+                            (float) 140, (float) 140));
 
       
-    grids = new ArrayList<Grid>();
+        grids = new ArrayList<Grid>();
+      
+      
+    //Character
+    //PApplet p, float x, float y, float vx, float vy, PImage face, PImage right, PImage left, PImage front
+      link = new Character(p, p.width/2, p.height/2, 10, 10);
   }
 
 
@@ -204,10 +230,30 @@ public class GamePlay5 implements SceneInterface{
     p.pushMatrix();
     for(Tile tile : tiles){
                 
-        //tile.displaySP();
+        tile.display();
         
     }
     p.popMatrix();
+      
+      
+    p.pushMatrix();
+    for(Tile tile : tiles2){
+        
+        tile.displayBP();
+    }
+    p.popMatrix();
+    
+    
+    p.pushMatrix();
+    for(Tile tile : tiles3){
+        
+        tile.displayEP();
+    }
+    p.popMatrix();
+      
+    
+    //Character
+    link.displayChara(tiles);
     
   }
     
@@ -277,6 +323,14 @@ public class GamePlay5 implements SceneInterface{
             //tile.mouseClicked();
         }
     }
+      
+    link.handleKeyPressedChara();
+  }
+    
+
+  public void handleKeyReleased(){
+    
+      link.handleKeyReleasedChara();
   }
    
     

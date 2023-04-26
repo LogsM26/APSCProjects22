@@ -136,5 +136,9 @@ public class TitleScene1 implements SceneInterface{
   public void handleKeyPressed(){
       
   }
+    
+  public void handleKeyReleased(){
+    
+  }
 
 }

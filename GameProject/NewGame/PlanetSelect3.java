@@ -156,4 +156,8 @@ public class PlanetSelect3 implements SceneInterface{
   public void handleKeyPressed(){
       
   }
+    
+  public void handleKeyReleased(){
+    
+  }
 }

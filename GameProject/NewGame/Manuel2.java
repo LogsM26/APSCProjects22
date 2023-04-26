@@ -43,7 +43,7 @@ public class Manuel2 implements SceneInterface{
     labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
       
     tiles = new ArrayList<Tile>();
-    tiles.add(new Tile(p, p.width/15+p.width/15, p.height-p.height/6, 140, 140));
+    tiles.add(new Tile(p, 0, p.width/15+p.width/15, p.height-p.height/6, 140, 140));
 
   }
 
@@ -77,11 +77,11 @@ public class Manuel2 implements SceneInterface{
         p.text("Main Goal/Storyline", p.width/15, p.height/4);
         p.text("Moving Tiles", p.width/15, p.height/2);
         p.text("Moving Your Character", p.width/2+100, p.height/4);
-        p.text("Finding Fragments & Satchels", p.width/2+100, p.height/2);
+        p.text("Finding Fragments and Goals", p.width/2+100, p.height/2);
       
         p.textSize(30);
         p.fill(235, 199, 99);
-        p.text("Good Luck & Have Fun!", p.width/2+100, p.height/2+350);
+        p.text("Good Luck and Have Fun!", p.width/2+100, p.height/2+350);
             
             //Bodytext
             p.textSize(25);
@@ -104,10 +104,9 @@ public class Manuel2 implements SceneInterface{
       
             p.text("Once All Tiles are placed, you can obtain a fragment", p.width/2+100, p.height/2+40);
             p.text("by walking up to it and clicking with the Mouse", p.width/2+100, p.height/2+75);
-            p.text("Satchels are obtained the same way", p.width/2+100, p.height/2+110);
-            p.text("Play to find out what's inside!", p.width/2+100, p.height/2+135);
-            p.text("Obtaing both gives you fun facts", p.width/2+100, p.height/2+180);
-            p.text("and another goal/prize reached!", p.width/2+100, p.height/2+205);
+            p.text("Play to find out what's inside!", p.width/2+100, p.height/2+110);
+            p.text("Obtaing fragments gives you fun facts", p.width/2+100, p.height/2+180);
+            p.text("and another goal reached!", p.width/2+100, p.height/2+205);
 
       
       
@@ -177,5 +176,9 @@ public class Manuel2 implements SceneInterface{
             //tile.mouseClicked();
         }
     }
+  }
+    
+  public void handleKeyReleased(){
+    
   }
 }

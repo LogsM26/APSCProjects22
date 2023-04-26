@@ -95,4 +95,8 @@ public class CharacterSelect3 implements SceneInterface{
      
   }
     
+  public void handleKeyReleased(){
+    
+  }
+    
 }

@@ -12,4 +12,5 @@ public interface SceneInterface{
   public void handleMouseReleased();
       
   public void handleKeyPressed();
+  public void handleKeyReleased();
 }
