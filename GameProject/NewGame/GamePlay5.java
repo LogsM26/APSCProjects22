@@ -11,10 +11,10 @@ public class GamePlay5 implements SceneInterface{
         //Integers
         int a = 65*9;
         int d = 65*6;
-        private int numTiles = 2;
+        private int numTiles = 1;
         
 
-    //Array
+    //Arrays
         //ArrayLists
         ArrayList<Label> labels;
         ArrayList<Tile> tiles;
@@ -49,12 +49,11 @@ public class GamePlay5 implements SceneInterface{
 
     //Variables
     this.p = p;
-
-    //Images
-
+      
     //Fonts
     this.liquid = liquid;
 
+      
     //ArrayLists
         labels = new ArrayList<Label>();
         //1400, 800 
@@ -72,12 +71,31 @@ public class GamePlay5 implements SceneInterface{
       
         //Starting
         tiles2 = new ArrayList<Tile>();
-        tiles2.add(new Tile(p, 0, (float) p.width/4, (float) p.height/2-20, (float) 140, (float) 140));
       
+        if(level == 1){
+            tiles2.add(new Tile(p, 0, (float) p.width/7+21, (float) p.height/2-90, (float) 140, (float) 140));
+            
+        }else if(level == 2){
+            tiles2.add(new Tile(p, 0, (float) p.width/2, (float)
+            p.height/2, (float) 140, (float) 140));
+            
+        }else if(level == 3){
+            tiles3.add(new Tile(p, 0, (float), p.width/4, (float) p.height/4, (float) 140, (float) 140));
+        }
+        
+        
         //Ending
         tiles3 = new ArrayList<Tile>();
-        tiles3.add(new Tile(p, 0, (float) p.width/4, (float) p.height/2,
-                            (float) 140, (float) 140));
+      
+        if(level == 1){
+            tiles3.add(new Tile(p, 0, (float) p.width/2, (float) p.height/2, (float) 140, (float) 140));
+            
+        }else if(level == 2){
+            tiles3.add(new Tile(p, 0, (float) p,width/2, (float) p.height/2, (float) 140, (float) 140));
+            
+        }else if(level == 3){
+            tiles3.add(new Tiles(p, 0, (float) p.width/4, (float) p.height/4, (float) 140, (float) 140));
+        }
 
       
         grids = new ArrayList<Grid>();
@@ -85,11 +103,15 @@ public class GamePlay5 implements SceneInterface{
       
     //Character
     //PApplet p, float x, float y, float vx, float vy, PImage face, PImage right, PImage left, PImage front
-      link = new Character(p, p.width/2, p.height/2, 10, 10);
+      link = new Character(p, p.width/7+21, p.height/2-86, 10, 10);
   }
 
 
+    
 
+  public void resetGame(){
+      
+  }
 
 
   //Custom Functions
@@ -230,7 +252,7 @@ public class GamePlay5 implements SceneInterface{
     p.pushMatrix();
     for(Tile tile : tiles){
                 
-        tile.display();
+        tile.displayT();
         
     }
     p.popMatrix();
@@ -253,7 +275,7 @@ public class GamePlay5 implements SceneInterface{
       
     
     //Character
-    link.displayChara(tiles);
+    link.displayChara(tiles, tiles2, tiles3);
     
   }
     

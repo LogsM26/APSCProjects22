@@ -8,6 +8,9 @@ public class Plant1SelectLevel4 implements SceneInterface{
 
   //Variables
   private MasterFile p;
+    
+    //Integers
+    public int level = 1;
 
     //ArrayLists
     ArrayList<Label> labels;
@@ -37,8 +40,13 @@ public class Plant1SelectLevel4 implements SceneInterface{
     labels.add(new Label(p, p.width/50, p.height-p.height/12, p.width/14, p.height/20, "Return"));
       
     labels.add(new Label(p, p.width/8+100, p.height/2+100, 100, 40, "Puppis I"));
-    labels.add(new Label(p, p.width/3+80+100, p.height/2+100, 100, 40, "Vela II"));
+    labels.add(new Label(p, p.width/3+180, p.height/2+100, 100, 40, "Vela II"));
     labels.add(new Label(p, p.width/2+p.width/8+p.width/32+100, p.height/2+100, 100, 40, "Carina III"));
+      
+    
+    labels.add(new Label(p, p.width/8+100, p.height/2+150, 100, 40, "Reset"));
+    labels.add(new Label(p, p.width/3+180, p.height/2+150, 100, 40, "Reset"));
+    labels.add(new Label(p, p.width/2+p.width/8+p.width/32+100, p.height/2+150, 100, 40, "Reset"));
 
   }
 
@@ -96,8 +104,19 @@ public class Plant1SelectLevel4 implements SceneInterface{
         p.changeScene(labels.get(0).getTargetScene(2));
         
     }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
+        level = 1;
         p.fill(235, 198, 99);
         p.changeScene(labels.get(1).getTargetScene(5));
+        
+    }else if(labels.get(2).isInside(p.mouseX, p.mouseY) == true){
+        level = 2;
+        p.fill(235, 198, 99);
+        p.changeScene(labels.get(2).getTargetScene(5));
+        
+    }else if(labels.get(3).isInside(p.mouseX, p.mouseY) == true){
+        level = 3;
+        p.fill(235, 198, 99);
+        p.changeScene(labels.get(3).getTargetScene(5));
     }
 
 

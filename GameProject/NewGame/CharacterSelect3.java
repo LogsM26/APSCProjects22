@@ -15,18 +15,20 @@ public class CharacterSelect3 implements SceneInterface{
 
     //Fun Stuff/Aesthetics
         //Images
+        PImage face
 
         //Fonts
         PFont liquid;
 
 
 
-  public CharacterSelect3(MasterFile p, PFont liquid){
+  public CharacterSelect3(MasterFile p, PFont liquid, PImage face){
 
     //Variables
     this.p = p;
 
     //Images
+    this.face = face;
 
     //Fonts
     this.liquid = liquid;
@@ -49,9 +51,28 @@ public class CharacterSelect3 implements SceneInterface{
 
 
     //Images
+    face = p.loadImage("faceyouloz.png");
+    face.resize(200, 200);
+    p.image(face, p.width/6, p.height/8);
+    
     
 
     //Text
+    p.textFont(liquid);
+        
+        //Heading
+        p.textSize(75);
+        p.fill(209, 73, 19);
+        p.text("Character Overview and Fun Facts", p.with/2, height/8);
+      
+        //Body Text
+        p.textSize(50);
+        p.fill(103, 209, 214);
+        p.text("The only current Character is", p.width/2, height/6);
+        p.text("LINK from The Legend of Zelda: The Minish Cap", p.width/2, height/6-50);
+    
+        p.text("Movement is described in the Manuel", p.width/2, p.height/6-125);
+        p.text("But you can use keys WASD", p.width/2, p.height/6-175);
 
 
 

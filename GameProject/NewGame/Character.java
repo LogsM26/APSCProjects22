@@ -96,7 +96,7 @@ public class Character{
     }
     
     
-    public void displayChara(ArrayList<Tile> tiles){
+    public void displayChara(ArrayList<Tile> tiles, ArrayList<Tile> tiles2, ArrayList<Tile> tiles3){
         
         p.image(current, x, y);
         
@@ -107,6 +107,28 @@ public class Character{
             
             if(  (t.isBlockedTile(x, y) == true) || 
                  (t.isOutsideTile((float) x, (float) y)) == true ){
+                tempX = 0;
+            }else{
+                x = tempX;
+            }
+        }
+        
+        
+        for(Tile t2 : tiles2){
+            
+            if(  (t2.isBlockedTile(x, y) == true) || 
+                 (t2.isOutsideTile((float) x, (float) y)) == true ){
+                tempX = 0;
+            }else{
+                x = tempX;
+            }
+        }
+        
+        
+        for(Tile t3 : tiles3){
+            
+            if(  (t3.isBlockedTile(x, y) == true) || 
+                 (t3.isOutsideTile((float) x, (float) y)) == true ){
                 tempX = 0;
             }else{
                 x = tempX;

@@ -84,6 +84,9 @@ public class MasterFile extends PApplet{
     
       //Title
       PImage bridge;
+    
+      //Character Select
+      PImage face;
 
       //Planet Select
       PImage p1;
@@ -134,14 +137,18 @@ public class MasterFile extends PApplet{
 
         //Select
         scenes.add(new PlanetSelect3(this, p1, p2, p3, a, liquid));
-        scenes.add(new CharacterSelect3(this, liquid));
+        scenes.add(new CharacterSelect3(this, liquid, face));
 
         //Level Select
         scenes.add(new Plant1SelectLevel4(this, star, liquid));
 
+      
         //Gameplay
         //scenes.add(new Plant1Game1(this, liquid));
-        scenes.add(new GamePlay5(this, liquid));
+        scenes.add(new GamePlay5(this, liquid, star));
+      
+        //Goal Reached
+        scenes.add(new GoalReached6(this, liquid, star));
       
 
 

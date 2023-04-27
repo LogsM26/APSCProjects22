@@ -67,8 +67,8 @@ public class Tile{
     
     public boolean isOutsideTile(float a, float b){
         
-        if( (x-width/2 > a && a > x+width/2) 
-            && (y-height/2 > b && b > y+height/2) ){
+        if( (x-width/2 < a && a < x+width/2) 
+            && (y-height/2 < b && b < y+height/2) ){
             return true;
         }else{
             return false;
@@ -177,7 +177,9 @@ public class Tile{
         p.rectMode(p.CORNER);
         p.fill(159, 168, 98);
         p.rect(10, 10, width/2-10, height/2-10);
-        p.rect(-70, -70, width, height/2-22);
+        
+        //p.rect(-70, -70, width, height/2-22);
+
         p.rect(-70, -70, width/2-20, height);
         
         p.popMatrix();
@@ -253,8 +255,8 @@ public class Tile{
         p.rect(0, 0, width, height);
         
         p.fill(173, 110, 59);
-        p.ellipse(x, y, width/2, height/2);
-        p.rect(10, 10, width/2-10, height/2-10);
+        p.ellipse(0, 0, width/2+5, height/2+5);
+        p.rect(0, 0, width, height/4);
         
         p.popMatrix();
     }
@@ -274,8 +276,8 @@ public class Tile{
         p.rect(0, 0, width, height);
         
         p.fill(173, 110, 59);
-        p.ellipse(x, y, width/2, height/2);
-        p.rect(10, 10, width/2-10, height/2-10);
+        p.ellipse(0, 0, width/2+5, height/2+5);
+        p.rect(0, 0, width, height/4);
         
         p.popMatrix();
     }
