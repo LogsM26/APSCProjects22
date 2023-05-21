@@ -4,7 +4,7 @@ import java.util.*;
 import processing.core.*;
 import java.lang.Math.*;
 
-public class GoalReached6 implements SceneInterface{
+public class GoalReachedIII6 implements SceneInterface{
     
     //Variables
     private MasterFile p;
@@ -37,7 +37,7 @@ public class GoalReached6 implements SceneInterface{
     
     
     
-    public GoalReached6(MasterFile p, PFont liquid, PImage star){
+    public GoalReachedIII6(MasterFile p, PFont liquid, PImage star){
         
         this.p = p;
         
@@ -59,28 +59,26 @@ public class GoalReached6 implements SceneInterface{
     //set substate
     public void display(){
         
-        drawGoalReached6();
+        drawGoalReachedIII6();
     }
     
-    
-    public void drawGoalReached6(){
+    /*
+    public void displayI(){
         
         liquid = p.createFont("DkLiquidEmbrace-YBvv.ttf", 75);
         p.textFont(liquid);
         
-        p.background(5, 21, 33);    
-        
         //Images
         star = p.loadImage("starFragment.png");
-        star.resize(500, 500);
-        p.image(star, p.width/12, p.height/3-50);
+        star.resize(300, 300);
+        p.image(star, p.width/4, p.height/3);
         
         
         //Text
         //Overall Heading
         p.textSize(75);
         p.fill(235, 198, 99);
-        p.text("Congratulations!", p.width/15, p.height/9+50);
+        p.text("Congratulations!", p.width/15, p.height/9);
         
         //Heading
         p.textSize(65);
@@ -90,24 +88,18 @@ public class GoalReached6 implements SceneInterface{
             //Subheadings
             p.textSize(45);
             p.fill(209, 73, 19);
-            p.text("What is Puppis?", p.width/2, p.height/8+125);
-                p.textSize(20);
-                p.text("Puppis is the Constellation representing the", p.width/2, p.height/8+175);
-                p.text("Stern/Back of Ship with the Engine of Argo Navis, the Larger Constellation", p.width/2, p.height/8+225);
-                p.text("that represents the ship Argo used by Jason and the Argonauts", p.width/2, p.height/8+275);
-                p.text("to find the Golden Fleece in Greek Mythology", p.width/2, p.height/8+325);
-            p.textSize(45);
-            p.text("Who Named it?", p.width/2, p.height/5+315);
-                p.textSize(20);
-                p.text("Nicolas Louis de Lacaille in 1763", p.width/2, p.height/5+365);
-                p.text("a French astronomer, after breaking up the too large Argo Navis into Three Parts", p.width/2, p.height/5+415);
-            p.textSize(45);
-            p.text("Why this name?", p.width/2, p.height/2+200);
-                p.textSize(20);
-                p.text("Puppis actually means 'Poop Deack' in Latin", p.width/2, p.height/2+250);
-                p.text("and the standard word for Ship", p.width/2, p.height/2+300);
-                p.text("but mostly to refer to the Rear, which is the Poop Deck", p.width/2, p.height/2+350);
-                //p.text("the Poop Deck", p.width/2, p.height/2+400);
+            p.text("What is Puppis?", p.width/2, p.height/8);
+                p.text("Puppis is the Constellation representing the", p.width/2, p.height/8+50);
+                p.text("Stern/Back of Ship with the Engine of Argo Navis, the Larger Constellation", p.width/2, p.height/8+100);
+                p.text("that represents the ship Argo used by Jason and the       Argonauts", p.width/2, p.height/8+150);
+                p.text("to find the Golden Fleece in Greek Mythology", p.width/2, p.height/8+200);
+            p.text("Who Named it?", p.width/2, p.height/5);
+                p.text("Nicolas Louis de Lacaille in 1763", p.width/2, p.height/5+50);
+                p.text("a French astronomer, after breaking up the too large Argo Navis into Three Parts", p.width/2, p.height/5+100);
+            p.text("Why this name?", p.width/2, p.height/2+100);
+                p.text("Puppis actually means 'Poop Deack' in Latin", p.width/2, p.height/2+150);
+                p.text("and the standard word for Ship", p.width/2, p.height/2+200);
+                p.text("but mostly to refer to the Rear, which is the Poop Deck", p.width/2, p.height/2+250);
         
             //Body Text
             p.textSize(25);
@@ -120,7 +112,6 @@ public class GoalReached6 implements SceneInterface{
         }
     }
     
-    /*
     public void displayII(){
         
         liquid = p.createFont("DkLiquidEmbrace-YBvv.ttf", 75);
@@ -170,23 +161,26 @@ public class GoalReached6 implements SceneInterface{
             l.display();
         }
     }
+    */
     
-    public void displayIII(){
+    public void drawGoalReachedIII6(){
         
         liquid = p.createFont("DkLiquidEmbrace-YBvv.ttf", 75);
         p.textFont(liquid);
         
+        p.background(5, 21, 33);
+        
         //Images
         star = p.loadImage("starFragment.png");
-        star.resize(300, 300);
-        p.image(star, p.width/4, p.height/3);
+        star.resize(500, 500);
+        p.image(star, p.width/12, p.height/3-50);
         
         
         //Text
         //Overall Heading
         p.textSize(75);
         p.fill(235, 198, 99);
-        p.text("Congratulations!", p.width/15, p.height/9);
+        p.text("Congratulations!", p.width/15, p.height/9+50);
         
         //Heading
         p.textSize(65);
@@ -196,16 +190,22 @@ public class GoalReached6 implements SceneInterface{
             //Subheadings
             p.textSize(45);
             p.fill(209, 73, 19);
-            p.text("What is Vela?", p.width/2, p.height/8);
-                p.text("Vela is the Constellation representing the", p.width/2,   p.height/8+50);
-                p.text("Sails of Argo Navis, the Larger Constellation",           p.width/2, p.height/8+100);
-                p.text("that represents the ship Argo used by Jason and the       Argonauts", p.width/2, p.height/8+150);
-                p.text("to find the Golden Fleece in Greek Mythology", p.width/2, p.height/8+200);
-            p.text("Who Named it?", p.width/2, p.height/5);
-                p.text("Nicolas Louis de Lacaille in 1763", p.width/2, p.height/5+50);
-                p.text("a French astronomer, after breaking up the too large Argo Navis into Three Parts", p.width/2, p.height/5+100);
-            p.text("Why this name?", p.width/2, p.height/2+100);
-                p.text("Vela is Latin for 'Sails of the Ship'", p.width/2, p.height/2+150);
+            p.text("What is Vela?", p.width/2, p.height/8+125);
+                p.textSize(20);
+                p.text("Vela is the Constellation representing the", p.width/2,   p.height/8+175);
+                p.text("Sails of Argo Navis, the Larger Constellation",           p.width/2, p.height/8+225);
+                p.text("that represents the ship Argo used by Jason and the Argonauts", p.width/2, p.height/8+275);
+                p.text("to find the Golden Fleece in Greek Mythology", p.width/2, p.height/8+325);
+            p.textSize(45);
+            p.text("Who Named it?", p.width/2, p.height/5+325);
+                p.textSize(20);
+                p.text("Nicolas Louis de Lacaille in 1763", p.width/2, p.height/5+375);
+                p.text("a French astronomer, after breaking up the too large", p.width/2, p.height/5+425);
+                p.text("Argo Navis into Three Parts", p.width/2, p.height/5+475);
+            p.textSize(45);
+            p.text("Why this name?", p.width/2, p.height/2+275);
+                p.textSize(20);
+                p.text("Vela is Latin for 'Sails of the Ship'", p.width/2, p.height/2+325);
         
             //Body Text
             p.textSize(25);
@@ -246,9 +246,8 @@ public class GoalReached6 implements SceneInterface{
     
     
     
-    
     public void handleMouseClicked(){
-        
+
         if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
             p.changeScene(labels.get(0).getTargetScene(4));
             
@@ -275,7 +274,7 @@ public class GoalReached6 implements SceneInterface{
     
     
     
-    
+   /*
    public boolean getGoalRI(){
        
        return false;
@@ -288,4 +287,5 @@ public class GoalReached6 implements SceneInterface{
        
        return false;
    }
+   */
 }

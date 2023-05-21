@@ -3,7 +3,7 @@
 import java.util.*;
 import processing.core.*;
 
-public class GamePlay5 implements SceneInterface{
+public class GamePlayII5 implements SceneInterface{
     
     
     //Variables
@@ -11,12 +11,14 @@ public class GamePlay5 implements SceneInterface{
         //Integers
         int a = 65*9;
         int d = 65*6;
-        private int numTiles = 2;
+        private int numTiles = 1;
     
         //Booleans
+        /*
         public boolean goalRI = false;
         public boolean goalRII = false;
         public boolean goalRIII = false;
+        */
 
     //Arrays
         //ArrayLists
@@ -61,7 +63,7 @@ public class GamePlay5 implements SceneInterface{
 
 
 
-  public GamePlay5(MasterFile p, PFont liquid, PImage star){
+  public GamePlayII5(MasterFile p, PFont liquid, PImage star){
 
     //Variables
     this.p = p;
@@ -84,7 +86,9 @@ public class GamePlay5 implements SceneInterface{
         
             //Stars
             labels2 = new ArrayList<Label>();
+            labels2.add(new Label(p, star, p.width/2+200, p.height-200, p.width/16, p.height/15));
       
+            /*
             if(p.getLevel() == 0){
                 labels2.add(new Label(p, star, p.width/2+200, p.height-200, p.width/16, p.height/15));
                 
@@ -95,6 +99,7 @@ public class GamePlay5 implements SceneInterface{
                 labels2.add(new Label(p, star, p.width/2+200, p.height-200, p.width/10, p.height/10));
                 
             }
+            */
       
       
       
@@ -107,8 +112,9 @@ public class GamePlay5 implements SceneInterface{
       
             //Starting
             tiles2 = new ArrayList<Tile>();
-            tiles2.add(new Tile(p, 0, (float) p.width/7+21, (float) p.height/2-90, (float) 140, (float) 140));
-            
+            tiles2.add(new Tile(p, 0, (float) p.width/2, (float)
+            p.height/2, (float) 140, (float) 140));
+
             /*
             if(p.getLevel() == 0){
                 tiles2.add(new Tile(p, 0, (float) p.width/7+21, (float) p.height/2-90, (float) 140, (float) 140));
@@ -124,11 +130,11 @@ public class GamePlay5 implements SceneInterface{
 
             //Ending
             tiles3 = new ArrayList<Tile>();
-            tiles3.add(new Tile(p, 0, (float) p.width/2+28, (float) p.height/2+40, (float) 140, (float) 140));
-
+            tiles3.add(new Tile(p, 0, (float) p.width/2, (float) p.height/2, (float) 140, (float) 140));
+            
             /*
             if(p.getLevel() == 0){
-                tiles3.add(new Tile(p, 0, (float) p.width/2+28, (float) p.height/2+40, (float) 140, (float) 140));
+                tiles3.add(new Tile(p, 0, (float) p.width/2, (float) p.height/2, (float) 140, (float) 140));
 
             }else if(p.getLevel() == 1){
                 tiles3.add(new Tile(p, 0, (float) p.width/2, (float) p.height/2, (float) 140, (float) 140));
@@ -158,6 +164,7 @@ public class GamePlay5 implements SceneInterface{
     
   
    //Accsessor Functions
+   /*
    public boolean getGoalRI(){
        
        return goalRI;
@@ -170,6 +177,7 @@ public class GamePlay5 implements SceneInterface{
        
        return goalRIII;
    }
+   */
 
 
     
@@ -180,7 +188,7 @@ public class GamePlay5 implements SceneInterface{
 
 
   //Custom Functions
-  public void drawGamePlay5(){
+  public void drawGamePlayII5(){
 
     liquid = p.createFont("DkLiquidEmbrace-YBvv.ttf", 75);
 
@@ -298,7 +306,7 @@ public class GamePlay5 implements SceneInterface{
   public void display(){
 
     //Calling Custom Functions
-    drawGamePlay5();
+    drawGamePlayII5();
 
     
     //p.pushMatrix();
@@ -321,7 +329,7 @@ public class GamePlay5 implements SceneInterface{
     p.pushMatrix();
     for(Tile tile : tiles){
                 
-        tile.display();
+        tile.displayT();
         
     }
     p.popMatrix();
@@ -354,7 +362,7 @@ public class GamePlay5 implements SceneInterface{
     
     
     
-    
+  /*
   public void displayI(){
       
   }
@@ -364,6 +372,7 @@ public class GamePlay5 implements SceneInterface{
   public void displayIII(){
       
   }
+  */
 
     
     
@@ -372,7 +381,7 @@ public class GamePlay5 implements SceneInterface{
   public void handleMouseClicked(){
       
     //System.out.println(
-
+    /*
     if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
       p.changeScene(labels.get(0).getTargetScene(4));
     }
@@ -383,9 +392,6 @@ public class GamePlay5 implements SceneInterface{
         goalRI = true;
         p.changeScene(labels2.get(0).getTargetScene(6));
         
-    }
-    
-    /*
     }else if( (labels2.get(1).isInside(p.mouseX, p.mouseY) == true) && 
                 (labels2.get(1).isInside(link.getCX(), link.getCY()) == true) ){
         
@@ -399,6 +405,17 @@ public class GamePlay5 implements SceneInterface{
         p.changeScene(labels2.get(2).getTargetScene(6));
     }
     */
+      
+    if(labels.get(0).isInside(p.mouseX, p.mouseY) == true){
+      p.changeScene(labels.get(0).getTargetScene(4));
+    }
+      
+    if( (labels2.get(0).isInside(p.mouseX, p.mouseY) == true) &&
+       (labels2.get(0).isInside(link.getCX(), link.getCY()) == true) ){
+        
+        p.changeScene(labels2.get(0).getTargetScene(9));
+    }
+      
     
       
     //Tile Stuff

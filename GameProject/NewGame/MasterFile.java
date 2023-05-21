@@ -69,12 +69,22 @@ public class MasterFile extends PApplet{
     ArrayList<SceneInterface> scenes;
 
     //Integers
-    private int current = 5;
+    private int current = 3;
     private int scenceIndex = 0;
+    
+    private int level = 0;
+    private int nextLevel = 0;
 
     //Floats
 
     //Strings
+    
+    //Booleans
+    /*
+    public boolean goalRI = false;
+    public boolean goalRII = false;
+    public boolean goalRIII = false;
+    */
 
 
   //Fun Stuff/Aesthetics
@@ -146,9 +156,13 @@ public class MasterFile extends PApplet{
         //Gameplay
         //scenes.add(new Plant1Game1(this, liquid));
         scenes.add(new GamePlay5(this, liquid, star));
+        scenes.add(new GamePlayII5(this, liquid, star)); //6
+        scenes.add(new GamePlayIII5(this, liquid, star)); //7
       
         //Goal Reached
-        scenes.add(new GoalReached6(this, liquid, star));
+        scenes.add(new GoalReached6(this, liquid, star)); //8
+        scenes.add(new GoalReachedII6(this, liquid, star)); //9
+        scenes.add(new GoalReachedIII6(this, liquid, star)); //10
       
 
 
@@ -164,11 +178,57 @@ public class MasterFile extends PApplet{
       //link = new Character(p, width/2, height/2, 5, 5, face, right, left, front);
 
   }
+    
+    
+  //Accsessor Functions
+    /*
+  public boolean getGoalRI(){
+       
+       return false;
+   }
+   public boolean getGoalRII(){
+       
+       return false;
+   }
+   public boolean getGoalRIII(){
+       
+       return false;
+   }
+   */
+   
+    
 
+    
+  public int getCurrent() {return current;}
+    
+  public int getLevel(){
+      return level;
+  }
 
+    
+    
+    
   public void draw(){
 
     scenes.get(current).display();
+      
+    
+    /*
+    if(current == 6){
+        
+        if( (level == 0) && (scenes.get(current).getGoalRI() == true) ){
+            scenes.get(current).displayI();
+            
+        }else if( (level == 1) && (scenes.get(current).getGoalRII() == true) ){
+            scenes.get(current).displayII();
+            
+        }else if( (level == 2) && (scenes.get(current).getGoalRIII() == true) ){
+            scenes.get(current).displayIII();
+            
+        }
+    }
+    */
+      
       
       
     //noCursor();
@@ -186,6 +246,12 @@ public class MasterFile extends PApplet{
   public void changeScene(int sceneIndex){
 
     current = sceneIndex;
+  }
+    
+  public void changeLevel(int nextLevel){
+      
+    level = nextLevel;
+      
   }
 
 

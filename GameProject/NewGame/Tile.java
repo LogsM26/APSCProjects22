@@ -67,8 +67,8 @@ public class Tile{
     
     public boolean isOutsideTile(float a, float b){
         
-        if( (x-width/2 < a && a < x+width/2) 
-            && (y-height/2 < b && b < y+height/2) ){
+        if( (x-width/2 > a && a > x+width/2) 
+            && (y-height/2 > b && b > y+height/2) ){
             return true;
         }else{
             return false;
@@ -178,7 +178,7 @@ public class Tile{
         p.fill(159, 168, 98);
         p.rect(10, 10, width/2-10, height/2-10);
         
-        //p.rect(-70, -70, width, height/2-22);
+        p.rect(-70, -70, width, height/2-22);
 
         p.rect(-70, -70, width/2-20, height);
         

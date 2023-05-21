@@ -39,6 +39,9 @@ public class Label{
 
       //Strings
       private String s;
+    
+  //Images
+    PImage star;
 
 
   public Label(PApplet p, int x, int y, int width, int height, String s /*int c*/){
@@ -53,7 +56,20 @@ public class Label{
 
     this.s = s;
 
-  //  this.c = c;
+    //this.c = c;
+  }
+    
+  public Label(PApplet p, PImage star, int x, int y, int width, int height){
+      
+    this.p = p;
+      
+    this.star = star;
+      
+    this.x = x;
+    this.y = y;
+      
+    this.width = width;
+    this.height = height;
   }
 
 
@@ -94,6 +110,15 @@ public class Label{
     p.textFont(liquid);
     p.text("Hunt for Stars", p.width/20, p.height/6+75);
     */
+  }
+    
+
+  public void displayS(){
+      
+      //Images
+        star = p.loadImage("starFragment.png");
+        star.resize(width, height);
+        p.image(star, x, y);
   }
 
 

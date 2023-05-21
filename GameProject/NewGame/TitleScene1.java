@@ -111,6 +111,19 @@ public class TitleScene1 implements SceneInterface{
     }
 
   }
+    
+    
+  /*
+  public void displayI(){
+      
+  }
+  public void displayII(){
+      
+  }
+  public void displayIII(){
+      
+  }
+  */
 
 
   public void handleMouseClicked(){
@@ -140,5 +153,22 @@ public class TitleScene1 implements SceneInterface{
   public void handleKeyReleased(){
     
   }
+    
+    
+    
+  /* 
+  public boolean getGoalRI(){
+       
+       return false;
+   }
+   public boolean getGoalRII(){
+       
+       return false;
+   }
+   public boolean getGoalRIII(){
+       
+       return false;
+   }
+   */
 
 }

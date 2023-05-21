@@ -122,7 +122,24 @@ public class PlanetSelect3 implements SceneInterface{
       label.display();
     }
   }
+    
+    
+    
+    
+   /*
+  public void displayI(){
+      
+  }
+  public void displayII(){
+      
+  }
+  public void displayIII(){
+      
+  }
+  */
 
+    
+    
 
   public void handleMouseClicked(){
 
@@ -160,4 +177,22 @@ public class PlanetSelect3 implements SceneInterface{
   public void handleKeyReleased(){
     
   }
+    
+    
+    
+    
+    /* 
+  public boolean getGoalRI(){
+       
+       return false;
+   }
+   public boolean getGoalRII(){
+       
+       return false;
+   }
+   public boolean getGoalRIII(){
+       
+       return false;
+   }
+   */
 }

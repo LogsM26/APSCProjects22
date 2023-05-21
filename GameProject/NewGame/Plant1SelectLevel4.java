@@ -10,7 +10,7 @@ public class Plant1SelectLevel4 implements SceneInterface{
   private MasterFile p;
     
     //Integers
-    public int level = 1;
+    //public int level = 1;
 
     //ArrayLists
     ArrayList<Label> labels;
@@ -51,7 +51,7 @@ public class Plant1SelectLevel4 implements SceneInterface{
   }
 
 
-
+  //public int getLevel() {return level;}
 
 
   //Custom Functions
@@ -94,6 +94,22 @@ public class Plant1SelectLevel4 implements SceneInterface{
     }
 
   }
+    
+    
+    
+   /*
+  public void displayI(){
+      
+  }
+  public void displayII(){
+      
+  }
+  public void displayIII(){
+      
+  }
+  */
+    
+    
 
 
   public void handleMouseClicked(){
@@ -104,19 +120,19 @@ public class Plant1SelectLevel4 implements SceneInterface{
         p.changeScene(labels.get(0).getTargetScene(2));
         
     }else if(labels.get(1).isInside(p.mouseX, p.mouseY) == true){
-        level = 1;
+        p.changeLevel(0);
         p.fill(235, 198, 99);
         p.changeScene(labels.get(1).getTargetScene(5));
         
     }else if(labels.get(2).isInside(p.mouseX, p.mouseY) == true){
-        level = 2;
+        p.changeLevel(1);
         p.fill(235, 198, 99);
-        p.changeScene(labels.get(2).getTargetScene(5));
+        p.changeScene(labels.get(2).getTargetScene(6));
         
     }else if(labels.get(3).isInside(p.mouseX, p.mouseY) == true){
-        level = 3;
+        p.changeLevel(2);
         p.fill(235, 198, 99);
-        p.changeScene(labels.get(3).getTargetScene(5));
+        p.changeScene(labels.get(3).getTargetScene(7));
     }
 
 
@@ -137,4 +153,22 @@ public class Plant1SelectLevel4 implements SceneInterface{
   public void handleKeyReleased(){
     
   }
+    
+    
+    
+    
+  /* 
+  public boolean getGoalRI(){
+       
+       return false;
+   }
+   public boolean getGoalRII(){
+       
+       return false;
+   }
+   public boolean getGoalRIII(){
+       
+       return false;
+   }
+   */
 }

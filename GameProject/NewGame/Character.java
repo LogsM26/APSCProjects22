@@ -62,6 +62,26 @@ public class Character{
     }
     
     
+    public float getCX() {return x;}
+    public float getCY() {return y;}
+    
+    
+    
+    
+    //Custom Functions
+    /*
+    public boolean isInsideChara(float a, float b){
+        
+        if( (x-width/2 < a && a < x+width/2) 
+            && (y-height/2 < b && b < y+height/2) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    */
+    
+    
     
     
     //Move with WASD
@@ -96,6 +116,9 @@ public class Character{
     }
     
     
+    
+    
+    //Display
     public void displayChara(ArrayList<Tile> tiles, ArrayList<Tile> tiles2, ArrayList<Tile> tiles3){
         
         p.image(current, x, y);
